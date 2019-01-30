@@ -1,0 +1,246 @@
+.exploreAirbnb {
+  width: 75%;
+  margin: auto;
+}
+
+.exploreAirbnb__title {
+  font-weight: 800!important;
+  margin-bottom: 0px!important;
+  font-size: 24px!important;
+  line-height: 30px!important;
+  letter-spacing: normal!important;
+  font-family: "Circular", "-apple-system", "BlinkMacSystemFont", "Roboto",
+    "Helvetica Neue", sans-serif!important;
+  color: rgb(72, 72, 72)!important;
+  padding-top: 2px!important;
+  padding-bottom: 2px!important;
+}
+
+.exploreAirbnb__info {
+  display: flex;
+}
+
+.exploreAirbnb__info--card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 25%;
+  height: 72px;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
+  margin-bottom: 4px;
+  text-align: left;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  padding: 0px;
+  margin-right: 20px;
+}
+
+.exploreAirbnb__card--pic1 {
+  background-image: url("https://a0.muscache.com/im/pictures/8b7519ec-2c82-4c09-8233-fd4d2715bbf9.jpg?aki_policy=large");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.exploreAirbnb__card--pic2 {
+  background-image: url("https://a0.muscache.com/im/pictures/cb8b3101-d419-4c17-8e2f-4989b39b98c3.jpg?aki_policy=large");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.exploreAirbnb__card--pic3 {
+  background-image: url("https://a0.muscache.com/im/pictures/da2d8e97-90b7-409f-94ac-5ab0327c289b.jpg?aki_policy=large");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.exploreAirbnb__card--text {
+  align-self: center;
+}
+
+.exploreAirbnb__card--text span {
+  margin-left: 15px;
+  font-size: 17px;
+  line-height: 21px;
+  font-family: "Circular", "-apple-system", "BlinkMacSystemFont", "Roboto",
+    "Helvetica Neue", sans-serif;
+  color: rgb(72, 72, 72);
+  font-weight: 800;
+}
+
+@media screen and (min-width: 743px) and (max-width: 1128px) {
+  .exploreAirbnb {
+    width: 90%;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin: 0px;
+  }
+
+  .exploreAirbnb__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1.5em;
+  }
+
+  .exploreAirbnb__info--card {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 72px;
+    width: 100%;
+    margin: 0px;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+  }
+
+  .exploreAirbnb__card--pic1 {
+    background-image: url("https://a0.muscache.com/im/pictures/8b7519ec-2c82-4c09-8233-fd4d2715bbf9.jpg?aki_policy=large");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+
+  .exploreAirbnb__card--pic2 {
+    background-image: url("https://a0.muscache.com/im/pictures/cb8b3101-d419-4c17-8e2f-4989b39b98c3.jpg?aki_policy=large");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+
+  .exploreAirbnb__card--pic3 {
+    background-image: url("https://a0.muscache.com/im/pictures/da2d8e97-90b7-409f-94ac-5ab0327c289b.jpg?aki_policy=large");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 743px) {
+  .exploreAirbnb__info--card {
+    display: inline-grid;
+    grid-template-rows: 1fr 1fr;
+    height: 135px;
+    width: 140px;
+    grid-column: 1 / 3;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+  }
+
+  .exploreAirbnb__card--text {
+    grid-column: 1 / 3;
+    text-align: center;
+  }
+
+  .exploreAirbnb__card--text span {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    font-size: 90%;
+  }
+
+  .exploreAirbnb__card--pic1 {
+    background-image: url("https://a0.muscache.com/im/pictures/8b7519ec-2c82-4c09-8233-fd4d2715bbf9.jpg?aki_policy=large");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    grid-column: 1 / 3;
+  }
+
+  .exploreAirbnb__card--pic2 {
+    background-image: url("https://a0.muscache.com/im/pictures/cb8b3101-d419-4c17-8e2f-4989b39b98c3.jpg?aki_policy=large");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    grid-column: 1 / 3;
+  }
+
+  .exploreAirbnb__card--pic3 {
+    background-image: url("https://a0.muscache.com/im/pictures/da2d8e97-90b7-409f-94ac-5ab0327c289b.jpg?aki_policy=large");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    grid-column: 1 / 3;
+  }
+}
+
+
+@media screen and (max-width: 425px) {
+  .exploreAirbnb__info--card {
+    display: inline-grid;
+    grid-template-rows: 1fr 1fr;
+    height: 135px;
+    width: 140px;
+    grid-column: 1 / 3;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+  }
+
+  .exploreAirbnb__card--text {
+    grid-column: 1 / 3;
+    text-align: center;
+  }
+
+  .exploreAirbnb__card--text span {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    font-size: 8.5px;
+  }
+
+  .exploreAirbnb__card--pic1 {
+    background-image: url("https://a0.muscache.com/im/pictures/8b7519ec-2c82-4c09-8233-fd4d2715bbf9.jpg?aki_policy=large");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    grid-column: 1 / 3;
+  }
+
+  .exploreAirbnb__card--pic2 {
+    background-image: url("https://a0.muscache.com/im/pictures/cb8b3101-d419-4c17-8e2f-4989b39b98c3.jpg?aki_policy=large");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    grid-column: 1 / 3;
+  }
+
+  .exploreAirbnb__card--pic3 {
+    background-image: url("https://a0.muscache.com/im/pictures/da2d8e97-90b7-409f-94ac-5ab0327c289b.jpg?aki_policy=large");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    grid-column: 1 / 3;
+  }
+}

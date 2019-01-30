@@ -1,0 +1,144 @@
+.airbnbViagem__title h3{
+
+  font-weight: 800;
+  margin-bottom: 0px;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: normal;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+  color: rgb(72, 72, 72);
+  padding-top: 2px;
+  padding-bottom: 2px;
+
+}
+
+.airbnbViagem__desc h4{
+
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: normal;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    color: rgb(72, 72, 72);
+    font-weight: normal;
+    margin-top: 0px;
+    width: 50%;
+
+}
+ 
+.airbnbViagem{
+
+    width: 75%;
+    margin: auto;  
+
+}
+
+.airbnbViagem__cards{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+
+}
+
+.airbnbViagem__familia--pic{
+
+    background-image: url("https://a0.muscache.com/pictures/ab40d890-7184-4a79-beb2-09e148e25d0d.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 318px;
+    
+  
+}
+
+.airbnbViagem__trabalho--pic{
+
+    background-image: url("https://a0.muscache.com/pictures/667e2a39-ec14-4990-b68f-0cf5ae41b674.jpg");;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 318px;
+  
+}
+
+.airbnbViagem__desc--text{
+
+    color: rgb(128, 45, 14);
+
+}
+
+.airbnbViagem__desc--text1{
+
+    letter-spacing: 0.2px;
+    font-size: 17px;
+
+}
+
+@media screen and (max-width: 783px){
+
+    .airbnbViagem__cards{
+
+        
+        overflow-x: scroll;
+
+    
+    }
+    .airbnbViagem__cards--familia{
+        display: inline-block;
+        width: 80vw;
+        height: auto;
+    }
+
+    .airbnbViagem__cards--trabalho{
+        display: inline-block;
+
+        width: 80vw;
+        height: auto;
+    }
+    
+    .airbnbViagem__familia--pic{
+    
+        background-image: url("https://a0.muscache.com/pictures/ab40d890-7184-4a79-beb2-09e148e25d0d.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 318px;
+        grid-column: 1/3;
+      
+    }
+    
+    .airbnbViagem__trabalho--pic{
+    
+        background-image: url("https://a0.muscache.com/pictures/667e2a39-ec14-4990-b68f-0cf5ae41b674.jpg");;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 318px;
+        grid-column: 1/3;
+
+      
+    }
+    
+    .airbnbViagem__desc--text{
+    
+        color: rgb(128, 45, 14);
+        
+
+    
+    }
+    
+    .airbnbViagem__desc--text1{
+    
+        letter-spacing: 0.2px;
+        font-size: 17px;
+    
+    }
+	
+		  ::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+    
+
+}

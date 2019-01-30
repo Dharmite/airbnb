@@ -1,0 +1,13 @@
+.airbnbStay__title h3{
+
+    font-weight: 800;
+    margin-bottom: 0px;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: normal;
+    font-family: "Circular", "-apple-system", "BlinkMacSystemFont", "Roboto", "Helvetica Neue", sans-serif;
+    color: rgb(72, 72, 72);
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+}

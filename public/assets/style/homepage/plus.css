@@ -1,0 +1,105 @@
+.airbnbPlus{
+
+    width: 75%;
+    margin: auto;
+  
+}
+
+.airbnbPlus__title h3{
+
+    font-weight: 800;
+    margin-bottom: 0px;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: normal;
+    font-family: "Circular", "-apple-system", "BlinkMacSystemFont", "Roboto", "Helvetica Neue", sans-serif;
+    color: rgb(72, 72, 72);
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+}
+
+.airbnbPlus__desc h4{
+
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: normal;
+    font-family: "Circular", "-apple-system", "BlinkMacSystemFont", "Roboto", "Helvetica Neue", sans-serif;
+    color: rgb(72, 72, 72);
+    font-weight: normal;
+    margin-top: 0px;
+
+}
+
+    
+.airbnbPlus__picture{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/assets/pictures/airbnb-plus.jpg");    height: 350px;
+    margin-bottom: 25px;
+    background-size: cover;
+    /* background-position-x: -100px; */
+
+}
+
+.airbnbPlus__picture--button a{
+
+    text-align: center!important;
+    font-size: 14px!important;
+    line-height: 18px!important;
+    letter-spacing: normal!important;
+    font-family: "Circular", "-apple-system", "BlinkMacSystemFont", "Roboto", "Helvetica Neue", sans-serif!important;
+    padding-top: 8px!important;
+    padding-bottom: 8px!important;
+    font-weight: 600!important;
+    padding-left: 16px!important;
+    padding-right: 16px!important;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 4px 0px!important;
+    color: rgb(72, 72, 72)!important;
+    margin: 0px!important;
+    text-decoration: none!important;
+    border-radius: 4px!important;
+    border-width: 1px!important;
+    border-style: solid!important;
+    background: rgb(255, 255, 255)!important;
+    border-color: transparent!important;
+}
+
+.airbnbPlus__picture--button span{
+
+    padding-left: 8px!important;
+    padding-right: 8px!important;
+    letter-spacing: 1px!important;
+    line-height: 32px!important;
+
+}
+
+@media screen and (max-width: 1128px){
+
+    .airbnbPlus{
+
+        width: 95%;
+        margin: auto;
+      
+    
+    }
+
+    .airbnbPlus__picture{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url('/assets/pictures/airbnb-plus.jpg');
+        height: 350px;
+        margin-bottom: 25px;
+        background-size: cover;
+        max-width: 100%;
+        /* background-position-x: -100px; */
+    
+    }
+
+}
