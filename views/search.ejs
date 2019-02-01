@@ -98,7 +98,7 @@
           </div>
 
           <div class="header-container__search col-lg-5 col-md-5 col-sm-12">
-            <input type="text" value=<%= data.where %> >
+            <input type="text" value=<%= fields.where %> >
           </div>
 
           <div class="header-container__options col-lg-6 col-md-6 col-sm-12">
@@ -122,14 +122,14 @@
     <main>
       <div class="exploreAirbnb" style="width: 82%;margin: auto;">
         <div class="exploreAirbnb__title">
-          <h3>Explore <%= data.where %></h3>
+          <h3>Explore <%= fields.where %></h3>
         </div>
 
         <div class="exploreAirbnb__info">
           <div class="exploreAirbnb__info--card">
             <div class="exploreAirbnb__card--pic1"></div>
 
-            <div class="exploreAirbnb__card--text"><span>Casas</span></div>
+            <div class="exploreAirbnb__card--text"><a href="/s/<%= fields.where %>/homes"><span>Casas</span></a></div>
           </div>
 
           <div class="exploreAirbnb__info--card">
@@ -143,11 +143,11 @@
       </div>
 
 
-      <% if (data.where.toUpperCase()==="ROME") { %>
+      <% if (fields.where.toUpperCase()==="ROME") { %>
         <%- include('results'); %>
       <% } %>
 
-      <% include notfound.ejs %>
+      <% include notfound.ejs %> 
 
 
       <div class="airbnbPlus" style="width: 82%;margin: auto;">

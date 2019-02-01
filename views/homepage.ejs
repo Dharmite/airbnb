@@ -34,6 +34,9 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="/assets/style/homepage/recomendado.css"/>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
   </head>
 
   <body>
@@ -77,14 +80,14 @@
 
           <div class="landingPage__form--inputs">
 
-            <form action="/s/:city/all" method="GET">
+            <form action="/s/all" method="POST">
 
               <div class="landingPage__form--where">
                 <label>ONDE</label>
                 <input
                   type="text"
                   placeholder="Em qualquer lugar"
-                  name="where"
+                  name="where" 
                 />
               </div>
 
@@ -142,6 +145,7 @@
         <div class="landingPage__header--oregon">
           <p>Mais de 300</p>
           <p>acomodações únicas no Oregon</p>
+          
         </div>
 
         <div class="landingPage__logo">
@@ -157,7 +161,7 @@
     <main>
       <div class="landingPage__header--form1">
         <div class="landingPage__form--inputs">
-          <form action="">
+          <form action="/s/all" method="POST">
             <div class="landingPage__form--where">
               <label>ONDE</label>
               <input type="text" placeholder="Em qualquer lugar" />
