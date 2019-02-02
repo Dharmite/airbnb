@@ -322,7 +322,7 @@
     /* justify-content: flex-end; */
   }
 
-  .landingPage__form--pesquisar > a {
+  .landingPage__form--pesquisar > button {
     font-family: "Circular", "-apple-system", "BlinkMacSystemFont", "Roboto",
       "Helvetica Neue", "sans-serif";
     color: #ffffff;
