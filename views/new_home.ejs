@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>New home - airbnb</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Airbnb website" />
+    <meta name="keywords" content="houses, renting, holiday, travel" />
+    <meta name="author" content="Dharmite Prabhudas" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/assets/style/general/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/assets/style/search/header.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-1 col-md-1 col-sm-12 header-container__logo">
+            <div class="header-container__logo--icon">
+              <img src="/assets/pictures/airbnb-red.png" alt="Airbnb logo" />
+            </div>
+          </div>
+
+          <div class="header-container__search col-lg-5 col-md-5 col-sm-12">
+            <input type="text" />
+          </div>
+
+          <div class="header-container__options col-lg-6 col-md-6 col-sm-12">
+            <div class="header-container__options--option anfitriao">
+              <p>Torne-se um anfitrião</p>
+            </div>
+            <div class="header-container__options--option ajuda">
+              <p>Ajuda</p>
+            </div>
+            <div class="header-container__options--option inscrever">
+              <p>Inscreva-se</p>
+            </div>
+            <div class="header-container__options--option entrar">
+              <p>Entre</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <h1>Add new home</h1>
+          <form action="/s/rome/homes" method="POST">
+            <div class="form-group">
+              <label for="image">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                aria-describedby="name"
+                placeholder="name"
+                name="name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="beds">Number of beds</label>
+              <input
+                type="number"
+                class="form-control"
+                id="beds"
+                aria-describedby="beds"
+                min="1"
+                name="beds"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="image">image url</label>
+              <input
+                type="text"
+                class="form-control"
+                id="image"
+                aria-describedby="image"
+                placeholder="image url"
+                name="image"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="price">Price</label>
+              <input
+                type="number"
+                class="form-control"
+                id="price"
+                aria-describedby="price"
+                min="1"
+                name="price"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea 
+                class="form-control"
+                id="description"
+                aria-describedby="description"
+                name="description"
+                required
+                /> </textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
