@@ -102,8 +102,9 @@ app.get("/help", (req, res) => {
 });
 
 app.get("/s/:city/homes/newhome", (req, res) => {
+  const city = req.params.city;
 
-  res.render('new_home');
+  res.render('new_home', { city, rome });
 
 });
 

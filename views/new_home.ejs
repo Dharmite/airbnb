@@ -1,31 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <% include partials/header.ejs %>
+
     <title>New home - airbnb</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Airbnb website" />
-    <meta name="keywords" content="houses, renting, holiday, travel" />
-    <meta name="author" content="Dharmite Prabhudas" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="/assets/style/general/fonts.css"
-    />
+
+
     <link
       rel="stylesheet"
       type="text/css"
@@ -36,34 +23,8 @@
   </head>
   <body>
     <header>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-1 col-md-1 col-sm-12 header-container__logo">
-            <div class="header-container__logo--icon">
-              <img src="/assets/pictures/airbnb-red.png" alt="Airbnb logo" />
-            </div>
-          </div>
+            <% include partials/navbar.ejs %>
 
-          <div class="header-container__search col-lg-5 col-md-5 col-sm-12">
-            <input type="text" />
-          </div>
-
-          <div class="header-container__options col-lg-6 col-md-6 col-sm-12">
-            <div class="header-container__options--option anfitriao">
-              <p>Torne-se um anfitrião</p>
-            </div>
-            <div class="header-container__options--option ajuda">
-              <p>Ajuda</p>
-            </div>
-            <div class="header-container__options--option inscrever">
-              <p>Inscreva-se</p>
-            </div>
-            <div class="header-container__options--option entrar">
-              <p>Entre</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </header>
 
     <div class="container">
@@ -136,5 +97,4 @@
         </div>
       </div>
     </div>
-  </body>
-</html>
+    <% include partials/footer.ejs %>
