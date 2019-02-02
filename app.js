@@ -15,10 +15,11 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const rome = [
+let rome = [
   {
     title: "Napoleone III Holiday home",
     price: 52,
+    beds: 2,
     url:
       "https://a0.muscache.com/im/pictures/90922bce-4a86-4fdb-992c-c602b99f9c35.jpg?aki_policy=xx_large",
     stars: 5,
@@ -28,6 +29,7 @@ const rome = [
   {
     title: "Giubbonari Exclusive Location x 4",
     price: 38,
+    beds: 2,
     url:
       "https://a0.muscache.com/im/pictures/22154918/2345a54a_original.jpg?aki_policy=xx_large",
     stars: 4.5,
@@ -37,6 +39,7 @@ const rome = [
   {
     title: "Pettinarihome Campo de FIORI",
     price: 89,
+    beds: 2,
     url:
       "https://a0.muscache.com/im/pictures/11341171/d5ca49b5_original.jpg?aki_policy=xx_large",
     stars: 5,
@@ -46,6 +49,7 @@ const rome = [
   {
     title: "Trevi Luxury Apartment",
     price: 45,
+    beds: 2,
     url:
       "https://a0.muscache.com/im/pictures/d4dae5ba-a2ee-4141-b066-1c01d0e87bf4.jpg?aki_policy=xx_large",
     stars: 4.5,
@@ -95,6 +99,33 @@ app.get("/rooms/plus/:room_id", (req, res) => {
 
 app.get("/help", (req, res) => {
   res.send("Welcome to help page");
+});
+
+app.get("/s/:city/homes/newhome", (req, res) => {
+
+  res.render('new_home');
+
+});
+
+app.post("/s/:city/homes", (req, res) => {
+
+  if(req.params.city.toUpperCase() !== "ROME"){
+    res.render("notfound");
+  }
+
+  const newHome = {
+    title: req.body.name,
+    price: req.body.price,
+    url: req.body.image,
+    description: req.body.description,
+    beds: req.body.beds,
+    stars: "Sem avaliação"
+
+  }
+
+  rome.push(newHome);
+  res.redirect(`/s/${req.params.city}/homes`);
+
 });
 
 app.listen(port, () => {
