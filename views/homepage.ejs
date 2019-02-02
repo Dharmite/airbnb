@@ -80,14 +80,15 @@
 
           <div class="landingPage__form--inputs">
 
-            <form action="/s/all" method="POST">
+            <form>
 
               <div class="landingPage__form--where">
                 <label>ONDE</label>
                 <input
                   type="text"
                   placeholder="Em qualquer lugar"
-                  name="where" 
+                  name="where"
+                  id="where" 
                 />
               </div>
 
@@ -133,7 +134,7 @@
               </div>
 
               <div class="landingPage__form--pesquisar">
-                <button type="submit">Pesquisar</button>
+                <button type="submit" id="pesquisar">Pesquisar</button>
               </div>
 
             </form>
@@ -161,7 +162,7 @@
     <main>
       <div class="landingPage__header--form1">
         <div class="landingPage__form--inputs">
-          <form action="/s/all" method="POST">
+          <form>
             <div class="landingPage__form--where">
               <label>ONDE</label>
               <input type="text" placeholder="Em qualquer lugar" />
@@ -185,7 +186,7 @@
             </div>
 
             <div class="landingPage__form--pesquisar">
-              <button type="submit">Pesquisar</button>
+              <button type="submit" id="pesquisar">Pesquisar</button>
             </div>
           </form>
         </div>
@@ -348,5 +349,17 @@
         </div>
       </div>
     </main>
+
+    <script>
+    
+      document.getElementById("pesquisar").addEventListener("click", (e)=>{
+
+        e.preventDefault();
+        console.log();
+        location.replace(`/s/${document.getElementById("where").value}/all`);
+
+      });
+    
+    </script>
   </body>
 </html>

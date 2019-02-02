@@ -65,30 +65,24 @@ app.get("/", (req, res) => {
   res.render("homepage", { data, rome });
 });
 
-app.post("/s/all", (req, res) => {
-  let data = {
-    where: req.body.where,
-    indate: req.body.indate,
-    outdate: req.body.outdate,
-    hospedes: req.body.hospedes
-  };
-  res.redirect(`/s/${data.where}/all?data=${JSON.stringify(data)}`);
-});
-
 app.get("/s/:city/all", (req, res) => {
-  const data = JSON.parse(req.query.data);
-  res.render("search", { fields: data, rome });
+  const city = req.params.city;
+
+  if (city.toUpperCase() === "ROME") {
+    res.render("search", { city, rome });
+  } else {
+    res.render("notfound", { city, rome });
+  }
 });
 
 app.get("/s/:city/homes", (req, res) => {
-  const data = {
-    where: req.params.city,
-    indate: req.query.indate,
-    outdate: req.query.outdate,
-    hospedes: req.query.hospedes
-  };
+  const city = req.params.city;
 
-  res.render("homes", { data, rome });
+  if (city.toUpperCase() === "ROME") {
+    res.render("homes", { city, rome });
+  } else {
+    res.render("notfound", { city, rome });
+  }
 });
 
 app.get("/rooms/:room_id", (req, res) => {
