@@ -1,46 +1,26 @@
 <div class="container" style="width: 82%;margin: auto;">
-        <div class="airbnbStay__title"><h3>Onde ficar</h3></div>
 
-        <div class="row">
-          <div class="card col-lg-3 col-md-3 col-sm-6" style="width: 18rem;">
-            <img class="card-img-top" src=<%= rome[0].url %> alt="Card image
-            cap" />
+  <div class="airbnbStay__title"><h3>Onde ficar</h3></div>
+
+  <div class="row">
+
+      <% rome.forEach(function(home) { %>
+
+        <div class="card col-lg-3 col-md-3 col-sm-6" style="width: 18rem;">
+            <img class="card-img-top" src=<%= home.url %> alt="Card image cap" />
             <div class="card-body">
-              <h5 class="card-title"><%= rome[0].title %></h5>
-              <p class="card-text"><%= rome[0].price %>€</p>
-              <p class="card-text"><%= rome[0].stars %> estrelas</p>
-              <p class="card-text"><%= rome[0].description %></p>
+              <h5 class="card-title"><%= home.title %></h5>
+              <p class="card-text"><%= home.price %>€</p>
+              <p class="card-text"><%= home.stars %> estrelas</p>
+              <p class="card-text"><%= home.description %></p>
+              <p class="card-text">Quartos: <%= home.beds %></p>
+
             </div>
           </div>
-          <div class="card card col-lg-3 col-md-3 col-sm-6" style="width: 18rem;">
-            <img class="card-img-top" src=<%= rome[1].url %> alt="Card image
-            cap" />
-            <div class="card-body">
-              <h5 class="card-title"><%= rome[1].title %></h5>
-              <p class="card-text"><%= rome[1].price %>€</p>
-              <p class="card-text"><%= rome[1].stars %> estrelas</p>
-              <p class="card-text"><%= rome[1].description %></p>
-            </div>
-          </div>
-          <div class="card card col-lg-3 col-md-3 col-sm-6" style="width: 18rem;">
-            <img class="card-img-top" src=<%= rome[2].url %> alt="Card image
-            cap" />
-            <div class="card-body">
-              <h5 class="card-title"><%= rome[2].title %></h5>
-              <p class="card-text"><%= rome[2].price %>€</p>
-              <p class="card-text"><%= rome[2].stars %> estrelas</p>
-              <p class="card-text"><%= rome[2].description %></p>
-            </div>
-          </div>
-          <div class="card card col-lg-3 col-md-3 col-sm-6" style="width: 18rem;">
-            <img class="card-img-top" src=<%= rome[3].url %> alt="Card image
-            cap" />
-            <div class="card-body">
-              <h5 class="card-title"><%= rome[3].title %></h5>
-              <p class="card-text"><%= rome[3].price %>€</p>
-              <p class="card-text"><%= rome[3].stars %> estrelas</p>
-              <p class="card-text"><%= rome[3].description %></p>
-            </div>
-          </div>
-        </div>
-      </div>
+        
+      <%}); %>
+
+
+
+  </div>
+</div>
