@@ -16,21 +16,20 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
 // Load location model
 const Location = require("./models/Location");
 
+var dbURL = process.env.MONGODB_URI || "mongodb://localhost/airbnbV5";
 
-  var dbURL = process.env.MONGODB_URI || "mongodb://localhost/airbnbV5";
+// Connect to MongoDB
+mongoose
+  .connect(dbURL, { useNewUrlParser: true })
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => console.log(err));
 
-  // Connect to MongoDB
-  mongoose
-    .connect(dbURL, { useNewUrlParser: true })
-    .then(() => console.log("MongoDB Connected"))
-    .catch(err => console.log(err));
-  
-
-  Location.create({name: "rome", houses:[
+Location.create({
+  name: "rome",
+  houses: [
     {
       title: "Napoleone III Holiday home",
       price: 52,
@@ -42,7 +41,7 @@ const Location = require("./models/Location");
         "Il nostro alloggio, fornito di due comode e ampie camere da letto, zona pranzo con un grande tavolo per 4 persone, un divano e due poltrone per i momenti di relax davanti alla tv, cucina bagno balcone cucina e piccla zona lavanderia, è situato nel centro storico di Roma"
     },
     {
-      title: "Giubbonari Exclusive Location x 4",
+      title: "Giubbonari exclusive Location x 4",
       price: 38,
       beds: 2,
       url:
@@ -71,8 +70,10 @@ const Location = require("./models/Location");
       description:
         "Trevi Luxury apartment is located in the heart of Rome, in a very strategic areas for those who want to visit the city: literally in front of Trevi Fountain, 8 minutes from the Spanish Steps and 6 minutes from the Pantheon (URL HIDDEN). "
     }
-  ]}).then(house => console.log(house)).catch(err => console.log(err));
-  
+  ]
+})
+  .then(house => console.log(house))
+  .catch(err => console.log(err));
 
 app.get("/", (req, res) => {
   const data = {
@@ -129,12 +130,10 @@ app.get("/s/:city/homes/newhome", (req, res) => {
   const city = req.params.city;
 
   const rome = Location.find({ name: city })
-  .then(rome =>{
-    res.render("new_home", { city, rome });
-
-  })
-  .catch(err=>console.log(err));
-
+    .then(rome => {
+      res.render("new_home", { city, rome });
+    })
+    .catch(err => console.log(err));
 });
 
 app.post("/s/:city/homes", (req, res) => {
@@ -142,28 +141,26 @@ app.post("/s/:city/homes", (req, res) => {
     res.render("notfound");
   }
 
+  Location.findOne({ name: req.params.city })
+    .then(rome => {
+      const newHome = {
+        title: req.body.name,
+        price: req.body.price,
+        url: req.body.image,
+        description: req.body.description,
+        beds: req.body.beds,
+        stars: "Sem avaliação"
+      };
 
+      rome.houses.push(newHome);
 
-  Location.findOne({name: req.params.city})
-  .then(rome =>{
-    const newHome = {
-      title: req.body.name,
-      price: req.body.price,
-      url: req.body.image,
-      description: req.body.description,
-      beds: req.body.beds,
-      stars: "Sem avaliação"
-    };
-
-    rome.houses.push(newHome);
-
-    rome
-    .save()
-    .then(rome => console.log(rome))
+      rome
+        .save()
+        .then(rome => console.log(rome))
+        .catch(err => res.json(err));
+    })
     .catch(err => res.json(err));
-})
-.catch(err => res.json(err));
-  
+
   res.redirect(`/s/${req.params.city}/homes`);
 });
 
