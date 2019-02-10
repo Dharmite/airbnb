@@ -31,7 +31,7 @@
       <div class="row justify-content-center">
         <div class="col-6">
           <h1>Add new home</h1>
-          <form action="/s/rome/homes" method="POST">
+          <form action="/<%= city %>/homes" method="POST">
             <div class="form-group">
               <label for="image">Name</label>
               <input
@@ -57,14 +57,14 @@
               />
             </div>
             <div class="form-group">
-              <label for="image">image url</label>
+              <label for="main_image">image url</label>
               <input
                 type="text"
                 class="form-control"
-                id="image"
-                aria-describedby="image"
+                id="main_image"
+                aria-describedby="main_image"
                 placeholder="image url"
-                name="image"
+                name="main_image"
                 required
               />
             </div>

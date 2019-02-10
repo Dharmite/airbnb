@@ -1,26 +1,25 @@
-<div class="container" style="width: 82%;margin: auto;">
-
+<div class="container-fluid" style="width: 90%;margin: auto;">
   <div class="airbnbStay__title"><h3>Onde ficar</h3></div>
 
   <div class="row">
+    <% searched_homes.forEach(function(home) { %>
 
-      <% rome[0].houses.forEach(function(home) { %>
-
-        <div class="card col-lg-3 col-md-3 col-sm-6" style="width: 18rem;">
-            <img class="card-img-top" src=<%= home.url %> alt="Card image cap" />
-            <div class="card-body">
-              <h5 class="card-title"><%= home.title %></h5>
-              <p class="card-text"><%= home.price %>€</p>
-              <p class="card-text"><%= home.stars %> estrelas</p>
-              <p class="card-text"><%= home.description %></p>
-              <p class="card-text">Quartos: <%= home.beds %></p>
-
-            </div>
-          </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 home" style="width: 18rem;">
+      <img
+        src="<%= home.main_image %>"
+        alt="Card image cap"
+        class="house-image"
+      />
+      <div>
         
-      <%}); %>
+        <p><span class="home__description-beds"><%= home.description %></span> · <span class="home__description-beds"><%= home.beds %> camas</span></p>
+        <p><span class="home__name"><%= home.name %></span></p>
 
+        <p><span class="home__price"><%= home.price %>€</span></p>
+        <p class="card-text"><%= home.rating %> estrelas</p>
+      </div>
+    </div>
 
-
+    <% }) %>
   </div>
 </div>
