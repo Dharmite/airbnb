@@ -1,54 +1,81 @@
 @media only screen and (max-width: 766px) {
-
-  .header-container__logo--icon{
-
+  .header-container__logo--icon {
     width: 90px;
     height: 90px;
-  
   }
 }
-
-.container{
-  margin-top: 1%;
-  margin-bottom: 2%;
+[class*="col-"] {
+  padding-left: 0;
+  padding-right: 0;
+}
+.row {
+  margin-left: 0;
+  margin-right: 0;
+  height: 100%;
 }
 
-.header-container__logo--icon img{
+/* container adjusted */
 
-  width: 80%;
-  height: 80%;
-
+.container {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  height: 80px;
 }
+.header-container__logo {
+  display: grid;
+  align-self: center;
+}
+
+.header-container__logo--icon {
+  display: grid;
+  justify-items: center;
+}
+
+.header-container__logo--icon img {
+  width: 34px;
+  height: 34px;
+}
+
 .header-container__search {
   display: flex;
   justify-content: start;
   align-self: center;
 }
 
-.header-container__search input {
+.header-container__search {
   background-color: #ffffff;
   border: 1px solid #ebebeb;
   border-radius: 4px !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 38px;
   width: 100%;
+  padding-left: 1%;
 }
 
-.header-container__search span {
-  position: absolute;
-  left: 130px;
-  top: 30px;
-  font-size: 18px;
+.header-container__search i {
+  display: grid;
+  align-self: center;
+  padding-right: 4px !important;
+}
+
+.fas.fa-search {
+  padding-right: 1%;
+}
+
+.header-container__search input {
+  border: none;
+  width: 100%;
+  font-family: "Circular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  color: #484848;
+  font-weight: bold;
 }
 
 .header-container__options {
   display: inline-grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-div.header-container__options.col-6 {
-  
-  padding: 0 !important;
+  grid-template-columns: 156.52px 54.52px 90.8px 67.28px;
+  justify-content: end;
 }
 
 .header-container__options--option {
@@ -57,7 +84,16 @@ div.header-container__options.col-6 {
   align-self: center;
 }
 
+.header-container__options--option:hover {
+  line-height: 1 !important;
+  padding: 8px !important;
+  border-bottom: 2px solid rgb(118, 118, 118) !important;
+}
+
 .header-container__options--option p {
   font-size: 14px;
-  margin:0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #484848;
+  font-weight: 550;
 }

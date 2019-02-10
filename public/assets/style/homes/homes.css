@@ -1,31 +1,21 @@
-#filters p{
-
-    margin-bottom: 0;
-    padding-right: 25px;
-    margin-right: 20px;
-
+#filters p {
+  margin-bottom: 0;
+  padding-right: 25px;
+  margin-right: 20px;
 }
 
-header{
-
-    margin-bottom: 5px;
-    border-bottom: 2px solid #DCDCDC;
-
+header {
+  margin-bottom: 5px;
+  border-bottom: 2px solid #dcdcdc;
 }
 
-
-
-#filters_container{
-    
-    margin-left: 0;
-    margin-right: 0;
-
-
+#filters_container {
+  margin-left: 0;
+  margin-right: 0;
 }
 
-#filters{
-    
-    border-bottom: 2px solid #DCDCDC;
-    width: 80%!important;
-    margin: auto;
+#filters {
+  border-bottom: 2px solid #dcdcdc;
+  width: 80% !important;
+  margin: auto;
 }

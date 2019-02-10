@@ -2,12 +2,9 @@
 
 <html>
   <head>
-
     <% include partials/header.ejs %>
 
-
     <title>Search - Airbnb</title>
-
 
     <link
       rel="stylesheet"
@@ -29,8 +26,6 @@
       media="screen"
       href="/assets/style/search/header.css"
     />
-
-
 
     <link
       rel="stylesheet"
@@ -70,12 +65,10 @@
 
   <body>
     <header>
-        <% include partials/navbar.ejs %>
-
+      <% include partials/navbar.ejs %>
     </header>
 
     <main>
-
       <div class="exploreAirbnb" style="width: 82%;margin: auto;">
         <div class="exploreAirbnb__title">
           <h3>Explore <%= city %></h3>
@@ -85,7 +78,9 @@
           <div class="exploreAirbnb__info--card">
             <div class="exploreAirbnb__card--pic1"></div>
 
-            <div class="exploreAirbnb__card--text"><a href="/s/<%= city %>/homes"><span>Casas</span></a></div>
+            <div class="exploreAirbnb__card--text">
+              <a href="/s/<%= city %>/homes"><span>Casas</span></a>
+            </div>
           </div>
 
           <div class="exploreAirbnb__info--card">
@@ -100,7 +95,7 @@
 
       <% include results.ejs %>
 
-
+      <h1>cenas</h1>
       <div class="airbnbPlus" style="width: 82%;margin: auto;">
         <div class="airbnbPlus__title"><h3>Apresentamos o Airbnb Plus</h3></div>
 
@@ -247,3 +242,5 @@
       crossorigin="anonymous"
     ></script>
     <% include partials/footer.ejs %>
+  </body>
+</html>
