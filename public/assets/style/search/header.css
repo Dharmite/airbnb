@@ -75,6 +75,7 @@
 .header-container__options {
   display: inline-grid;
   grid-template-columns: 156.52px 54.52px 90.8px 67.28px;
+  justify-content: end;
 }
 
 .header-container__options--option {
