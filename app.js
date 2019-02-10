@@ -28,14 +28,14 @@ mongoose
   .connect(dbURL, { useNewUrlParser: true })
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
+// cenas
+// Location.create({
+//   name: "rome",
+//   houses: [] 
 
-Location.create({
-  name: "rome",
-  houses: []
-
-})
-  .then(house => console.log(house))
-  .catch(err => console.log(err));
+// })
+//   .then(house => console.log(house))
+//   .catch(err => console.log(err));
 
 app.get("/", (req, res) => {
   const data = {
