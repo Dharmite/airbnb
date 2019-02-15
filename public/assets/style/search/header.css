@@ -82,13 +82,9 @@
   display: grid;
   justify-content: center;
   align-self: center;
+  
 }
 
-.header-container__options--option:hover {
-  line-height: 1 !important;
-  padding: 8px !important;
-  border-bottom: 2px solid rgb(118, 118, 118) !important;
-}
 
 .header-container__options--option p {
   font-size: 14px;
@@ -96,4 +92,7 @@
   font-family: Arial, Helvetica, sans-serif;
   color: #484848;
   font-weight: 550;
+}
+.anfitriao:hover{
+  border-bottom: 2px solid rgb(118, 118, 118) !important; 
 }

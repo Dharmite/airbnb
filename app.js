@@ -31,7 +31,7 @@ mongoose
 // cenas
 // Location.create({
 //   name: "rome",
-//   houses: [] 
+//   houses: []
 
 // })
 //   .then(house => console.log(house))
@@ -90,7 +90,7 @@ app.get("/help", (req, res) => {
   res.send("Welcome to help page");
 });
 
-app.get("/s/:city/homes/new", (req, res) => {
+app.get("/:city/homes/new", (req, res) => {
   const city = req.params.city;
 
   const rome = Location.find({ name: city })
@@ -119,15 +119,13 @@ app.post("/:city/homes", (req, res) => {
         .then(home => {
           location.houses.push(home._id);
           location
-            .save()
-            .then(rome => console.log(rome))
+            .save() 
+            .then(rome => res.redirect(`/${req.params.city}/homes`))
             .catch(err => res.json(err));
         })
         .catch(err => console.error(err));
     })
     .catch(err => res.json(err));
-
-  res.redirect(`/${req.params.city}/homes`);
 });
 
 app.listen(port, () => {
