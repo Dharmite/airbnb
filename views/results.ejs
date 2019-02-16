@@ -4,14 +4,16 @@
   <div class="row">
     <% searched_homes.forEach(function(home) { %>
 
+      
     <div class="col-lg-3 col-md-3 col-sm-6 home" style="width: 18rem;">
       <img
         src="<%= home.main_image %>"
         alt="Card image cap"
         class="house-image"
       />
+      <a href="/rooms/<%= home._id %>">
       <div>
-        <p></p>
+        <p>
           <span class="home__description-beds"><%= home.description %></span> ·
           <span class="home__description-beds"><%= home.beds %> camas</span>
         </p>
@@ -33,6 +35,7 @@
         ></span>
         <% } %>
       </div>
+    </a>
     </div>
 
     <% }) %>

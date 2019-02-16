@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// Create Schema
 const LocationSchema = new Schema({
   name: {
     type: String,
@@ -9,9 +8,8 @@ const LocationSchema = new Schema({
   },
   houses: [
     {
-        type: Schema.Types.ObjectId,
-        ref: "homes"
-      
+      type: Schema.Types.ObjectId,
+      ref: "homes"
     }
   ]
 });
