@@ -1,6 +1,9 @@
-<div class="container">
+<div
+  class="container container-main"
+  style="border-bottom: 1px solid gainsboro"
+>
   <div class="row">
-    <div class="col-lg-1 col-md-1 col-sm-12 header-container__logo">
+    <div class="col-lg-1 col-md-1 header-container__logo">
       <a href="/">
         <div class="header-container__logo--icon">
           <img src="/assets/pictures/airbnb-red.png" alt="Airbnb logo" />
@@ -8,12 +11,12 @@
       </a>
     </div>
 
-    <div class="col-lg-5 col-md-5 col-sm-12 header-container__search">
+    <div class="col-lg-5 col-md-5 header-container__search">
       <i class="fas fa-search"></i>
       <input type="text" value=<%= city %> />
     </div>
 
-    <div class="col-lg-6 col-md-6 col-sm-12 header-container__options">
+    <div class="col-lg-6 col-md-6 header-container__options">
       <div class="header-container__options--option anfitriao">
         <p>Torne-se um anfitrião</p>
       </div>
@@ -27,5 +30,10 @@
         <p>Entre</p>
       </div>
     </div>
+  </div>
+</div>
+<div class="container container-filter">
+  <div class="row" style="border-bottom: 1px solid gainsboro; height: 48px;">
+    <button style="margin-left: 80px" class="filter-button">cidade: <%= city %></button>
   </div>
 </div>

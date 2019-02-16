@@ -233,7 +233,8 @@
     font-size: 30px !important;
     line-height: 36px !important;
     letter-spacing: normal !important;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+      Helvetica Neue, sans-serif !important;
     text-transform: undefined !important;
     color: #ffffff !important;
     padding-top: 6px !important;
@@ -241,7 +242,7 @@
     font-weight: bold !important;
     margin: 0px !important;
     padding: 0px !important;
-    }
+  }
 
   .landingPage__header--oregon {
     display: none;
@@ -346,7 +347,25 @@
     width: 100%;
     justify-content: center;
   }
-  .landingPage__logo img{
+  .landingPage__logo img {
     display: none;
   }
+}
+
+form label {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.33333em;
+  letter-spacing: 0.0833333em;
+  color: rgb(72, 72, 72);
+  
+}
+
+form input{
+  font-size: 17px !important;
+}
+
+form select{
+  font-size: 17px !important;
 }

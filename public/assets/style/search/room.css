@@ -1,0 +1,122 @@
+@media only screen and (max-width: 768px) {
+  .room_pics {
+    height: auto;
+    max-height: 200px;
+
+  }
+
+}
+
+.container-filter {
+  display: none;
+}
+
+.room_pics {
+  padding: 0px;
+  height: 300px;
+}
+
+.col-6 {
+  padding: 0px;
+  height: 100%;
+}
+
+.col-6 img {
+  max-height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
+.col-3 {
+  padding: 0px;
+  height: 100%;
+}
+
+.col-3 img {
+  max-height: 50%;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.room__reserve-price {
+  overflow-wrap: break-word !important;
+  font-size: 22px !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  line-height: 1.44444em !important;
+  color: rgb(72, 72, 72) !important;
+}
+
+.room__reserve-pricedays {
+  overflow-wrap: break-word !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  line-height: 1.33333em !important;
+  color: rgb(72, 72, 72) !important;
+  margin: 0px !important;
+}
+
+.room__reserve-button button {
+  font-size: 16px !important;
+  line-height: 24px !important;
+  font-family: "Helvetica Neue", sans-serif !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  font-weight: 800 !important;
+  padding-left: 22px !important;
+  padding-right: 22px !important;
+  color: #ffffff !important;
+  margin: 0px !important;
+  text-decoration: none !important;
+  border-radius: 4px !important;
+  border-width: 2px !important;
+  border-style: solid !important;
+  background: rgb(255, 90, 95) !important;
+  border-color: transparent !important;
+  display: inline-block !important;
+  position: relative !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  width: 100% !important;
+}
+
+.room_info {
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.room_info .row {
+  width: 80%;
+  margin: auto;
+}
+
+.room__description span{
+  display: block;
+}
+
+.room__description-desc{
+
+
+  overflow-wrap: break-word !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  line-height: 1.33333em !important;
+  color: rgb(72, 72, 72) !important;
+
+}
+
+.room__description-title{
+  overflow-wrap: break-word !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+  font-size: 32px !important;
+  font-weight: 800 !important;
+  line-height: 1.125em !important;
+  color: rgb(72, 72, 72) !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+  margin: 0px !important;
+}

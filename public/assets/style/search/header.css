@@ -2,7 +2,20 @@
   .header-container__logo--icon {
     width: 90px;
     height: 90px;
+    margin: 0;
   }
+
+  [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+  }
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+    height: 100%;
+  }
+
 }
 [class*="col-"] {
   padding-left: 0;
@@ -84,16 +97,38 @@
   align-self: center;
 }
 
-.header-container__options--option:hover {
-  line-height: 1 !important;
-  padding: 8px !important;
-  border-bottom: 2px solid rgb(118, 118, 118) !important;
-}
-
 .header-container__options--option p {
   font-size: 14px;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: #484848;
   font-weight: 550;
+}
+.anfitriao:hover {
+  border-bottom: 2px solid rgb(118, 118, 118) !important;
+}
+
+.filter-button {
+  font-size: 14px !important;
+  line-height: 18px !important;
+  letter-spacing: normal !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  position: relative !important;
+  text-align: center !important;
+  width: auto !important;
+  color: rgb(255, 255, 255) !important;
+  border-radius: 4px !important;
+  text-decoration: none !important;
+  background: rgb(0, 132, 137) !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: rgb(0, 132, 137) !important;
+  border-image: initial !important;
 }

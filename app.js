@@ -29,7 +29,7 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
-// Location.create({
+//   Location.create({
 //   name: "rome",
 //   houses: []
 
@@ -79,7 +79,14 @@ app.get("/:city/homes", (req, res) => {
 });
 
 app.get("/rooms/:room_id", (req, res) => {
-  res.send("Welcome to home page");
+  
+  Home.findById(req.params.room_id)
+  .then(room => {
+    // como vou buscar city???
+    res.render("home", {room, city: "rome"});
+  })
+  .catch(err=> console.error(err));
+
 });
 
 app.get("/rooms/plus/:room_id", (req, res) => {
@@ -90,7 +97,7 @@ app.get("/help", (req, res) => {
   res.send("Welcome to help page");
 });
 
-app.get("/s/:city/homes/new", (req, res) => {
+app.get("/:city/homes/new", (req, res) => {
   const city = req.params.city;
 
   const rome = Location.find({ name: city })
@@ -120,15 +127,14 @@ app.post("/:city/homes", (req, res) => {
           location.houses.push(home._id);
           location
             .save()
-            .then(rome => console.log(rome))
+            .then(rome => res.redirect(`/${req.params.city}/homes`))
             .catch(err => res.json(err));
         })
         .catch(err => console.error(err));
     })
     .catch(err => res.json(err));
-
-  res.redirect(`/${req.params.city}/homes`);
 });
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
