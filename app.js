@@ -28,8 +28,8 @@ mongoose
   .connect(dbURL, { useNewUrlParser: true })
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
-// cenas
-// Location.create({
+
+//   Location.create({
 //   name: "rome",
 //   houses: []
 
@@ -79,7 +79,14 @@ app.get("/:city/homes", (req, res) => {
 });
 
 app.get("/rooms/:room_id", (req, res) => {
-  res.send("Welcome to home page");
+  
+  Home.findById(req.params.room_id)
+  .then(room => {
+    // como vou buscar city???
+    res.render("home", {room, city: "rome"});
+  })
+  .catch(err=> console.error(err));
+
 });
 
 app.get("/rooms/plus/:room_id", (req, res) => {
@@ -119,7 +126,7 @@ app.post("/:city/homes", (req, res) => {
         .then(home => {
           location.houses.push(home._id);
           location
-            .save() 
+            .save()
             .then(rome => res.redirect(`/${req.params.city}/homes`))
             .catch(err => res.json(err));
         })
@@ -127,6 +134,7 @@ app.post("/:city/homes", (req, res) => {
     })
     .catch(err => res.json(err));
 });
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
