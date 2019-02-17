@@ -1,3 +1,9 @@
+// Load location model
+const Location = require("../models/Location");
+// Load home model
+const Home = require("../models/Home");
+
+
 exports.showHome = (req, res) => {
 
 
