@@ -3,17 +3,15 @@ const Location = require("../models/Location");
 // Load home model
 const Home = require("../models/Home");
 
+const db = require("../utilities/db/db");
 
 exports.showHome = (req, res) => {
-
-
   Home.findById(req.params.room_id)
     .then(room => {
       // como vou buscar city???
-      Location.findOne({_id: room.location}).then(location => {
-        res.render("home", { room, location});
-
-      })
+      Location.findOne({ _id: room.location }).then(location => {
+        res.render("home", { room, location });
+      });
     })
     .catch(err => console.error(err));
 };
@@ -32,31 +30,31 @@ exports.showCreateHome = (req, res) => {
     .catch(err => console.log(err));
 };
 
-exports.createHome = (req, res) => {
+exports.createHome = async (req, res) => {
   if (req.params.city.toUpperCase() !== "ROME") {
     res.render("notfound");
   }
 
-  Location.findOne({ name: req.params.city })
-    .then(location => {
-      const newHome = {
-        name: req.body.name,
-        beds: req.body.beds,
-        price: req.body.price,
-        main_image: req.body.main_image,
-        description: req.body.description,
-        location: location._id 
-      };
-
-      Home.create(newHome)
-        .then(home => {
-          location.houses.push(home._id);
-          location
-            .save()
-            .then(rome => res.redirect(`/${req.params.city}/homes`))
-            .catch(err => res.json(err));
-        })
-        .catch(err => console.error(err));
-    })
-    .catch(err => res.json(err));
+  try {
+    let location = await db.findDocumentByProperty("locations", {
+      name: req.params.city
+    });
+    console.log(location, "location");
+    const newHome = await db.postToDB("homes", {
+      name: req.body.name,
+      beds: req.body.beds,
+      price: req.body.price,
+      main_image: req.body.main_image,
+      description: req.body.description,
+      location: location._id
+    });
+    console.log(newHome, "newhome");
+    location.houses.push(newHome._id);
+    location
+      .save()
+      .then(result => res.redirect(`/${req.params.city}/homes`))
+      .catch(err => res.json(err));
+  } catch (error) {
+    return error;
+  }
 };
