@@ -1,8 +1,13 @@
 exports.showHome = (req, res) => {
+
+
   Home.findById(req.params.room_id)
     .then(room => {
       // como vou buscar city???
-      res.render("home", { room, city: "rome" });
+      Location.findOne({_id: room.location}).then(location => {
+        res.render("home", { room, location});
+
+      })
     })
     .catch(err => console.error(err));
 };
@@ -33,7 +38,8 @@ exports.createHome = (req, res) => {
         beds: req.body.beds,
         price: req.body.price,
         main_image: req.body.main_image,
-        description: req.body.description
+        description: req.body.description,
+        location: location._id 
       };
 
       Home.create(newHome)

@@ -1,4 +1,5 @@
 exports.showAll = (req, res) => {
+
   const city = req.params.city;
   let searched_homes;
   if (city.toUpperCase() === "ROME") {
@@ -6,7 +7,7 @@ exports.showAll = (req, res) => {
       .populate("houses")
       .exec(function(err, location) {
         searched_homes = location.houses;
-        res.render("search", { city, searched_homes });
+        res.render("search", { location:city, searched_homes });
       });
   } else {
     res.render("notfound", { city });

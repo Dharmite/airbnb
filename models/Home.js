@@ -24,6 +24,11 @@ const HomeSchema = new Schema({
   description: {
     type: String,
     required: true
+  },
+  location: {
+    type: Schema.Types.ObjectId,
+    ref: "locations"
+
   }
 });
 
