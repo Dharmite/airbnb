@@ -4,6 +4,11 @@ const request = require("request");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
+const general = require('./routes/generalPages');
+const home = require('./routes/home');
+const location = require('./routes/location');
+
+
 const app = express();
 
 app.set("view engine", "ejs");
@@ -37,104 +42,10 @@ mongoose
 //   .then(house => console.log(house))
 //   .catch(err => console.log(err));
 
-app.get("/", (req, res) => {
-  const data = {
-    where: req.query.city,
-    indate: req.query.indate,
-    outdate: req.query.outdate,
-    hospedes: req.query.hospedes
-  };
-
-  res.render("homepage", { data });
-});
-
-app.get("/s/:city/all", (req, res) => {
-  const city = req.params.city;
-  let searched_homes;
-  if (city.toUpperCase() === "ROME") {
-    Location.findOne({ name: city })
-      .populate("houses")
-      .exec(function(err, location) {
-        searched_homes = location.houses;
-        res.render("search", { city, searched_homes });
-      });
-  } else {
-    res.render("notfound", { city });
-  }
-});
-
-app.get("/:city/homes", (req, res) => {
-  const city = req.params.city;
-  let searched_homes;
-  if (city.toUpperCase() === "ROME") {
-    Location.findOne({ name: city })
-      .populate("houses")
-      .exec(function(err, location) {
-        searched_homes = location.houses;
-        res.render("homes", { city, searched_homes });
-      });
-  } else {
-    res.render("notfound", { city });
-  }
-});
-
-app.get("/rooms/:room_id", (req, res) => {
-  
-  Home.findById(req.params.room_id)
-  .then(room => {
-    // como vou buscar city???
-    res.render("home", {room, city: "rome"});
-  })
-  .catch(err=> console.error(err));
-
-});
-
-app.get("/rooms/plus/:room_id", (req, res) => {
-  res.send("Welcome to plus homes page");
-});
-
-app.get("/help", (req, res) => {
-  res.send("Welcome to help page");
-});
-
-app.get("/:city/homes/new", (req, res) => {
-  const city = req.params.city;
-
-  const rome = Location.find({ name: city })
-    .then(rome => {
-      res.render("new_home", { city, rome });
-    })
-    .catch(err => console.log(err));
-});
-
-app.post("/:city/homes", (req, res) => {
-  if (req.params.city.toUpperCase() !== "ROME") {
-    res.render("notfound");
-  }
-
-  Location.findOne({ name: req.params.city })
-    .then(location => {
-      const newHome = {
-        name: req.body.name,
-        beds: req.body.beds,
-        price: req.body.price,
-        main_image: req.body.main_image,
-        description: req.body.description
-      };
-
-      Home.create(newHome)
-        .then(home => {
-          location.houses.push(home._id);
-          location
-            .save()
-            .then(rome => res.redirect(`/${req.params.city}/homes`))
-            .catch(err => res.json(err));
-        })
-        .catch(err => console.error(err));
-    })
-    .catch(err => res.json(err));
-});
-
+// Use Routes
+app.use(general);
+app.use(home);
+app.use(location);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
