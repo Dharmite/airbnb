@@ -53,17 +53,54 @@
 
       <div class="container-fluid room_info">
         <div class="row">
-          <div class="col-lg-7 col-md-12 col-sm-12" style="border: 1px solid;">
+          <div class="col-lg-7 col-md-12 col-sm-12">
             <div class="room__description">
-              <span class="room__description-desc"><%= room.description %></span>
-              <span class="room__description-title"><%= room.name %></span>
+              <span class="room__description-desc"
+                ><%= room.description %></span
+              >
+              <span class="room__description-title"> <%= room.name %></span>
+              <span class="room__description-city"><%= location.name %></span>
+
+              <div class="extra_info">
+
+                   <h6 class="extra_info-title"><i class="fas fa-home"></i> <%= room.description %></h6>
+                <p class="extra_info-desc"><%= room.beds %> quarto/quartos</p>
+
+              </div>
+
+              <div class="extra_info">
+
+                  <h6 class="extra_info-title"><i class="fas fa-coffee"></i> Café da Manhã</h6>
+                  <p class="extra_info-desc">Este é um dos poucos lugares na região com esse recurso.
+                    </p>
+  
+                </div>
+
+                <div class="extra_info">
+
+                   <h6 class="extra_info-title">	
+                      <i class="fas fa-user"></i>  Rita é um Superhost</h6>
+                    <p class="extra_info-desc">Superhosts são anfitriões experientes e muito bem avaliados, comprometidos em fornecer estadias excelentes para seus hóspedes.
+                      </p>
+    
+                  </div>
+
+                  <div class="extra_info">
+
+                      <h6 class="extra_info-title">	
+                          <i class="fas fa-bell"></i> Self check-in</h6>
+                      <p class="extra_info-desc">Faça check-in sem problemas com o porteiro.
+
+                        </p>
+      
+                    </div>
+
             </div>
           </div>
 
           <div class="col-lg-5 col-md-12 col-sm-12">
             <div class="card">
               <div class="card-body">
-
                 <span class="room__reserve-price"><%= room.price %>€</span>
                 <span class="room__reserve-pricedays">por noite</span>
                 <p>
@@ -86,41 +123,46 @@
                 <hr />
 
                 <form>
-                  <div>
-                    <div>
-                      <label>CHECK IN</label>
-                      <input type="text" value="dd/mês/ano" />
+                  <div class="form-group">
+                    <label">Datas</label>
+                    <div class="container-fluid" style="padding:0">
+                      <div class="row" style="margin:0; border: 1px solid #aaa;">
+                        <div class="col-5"><input placeholder="Check in" class="form-control" type="text" onfocus="(this.type='date')"  id="date" style="padding:0; border: none;"></div>
+                        <div style="width: 24px; display: flex;    justify-content: center;align-items: center;" class="col-2"><svg viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="height: 24px; width: 24px; display: block; fill: currentcolor; margin:0px"><path d="m0 12.5a.5.5 0 0 0 .5.5h21.79l-6.15 6.15a.5.5 0 1 0 .71.71l7-7v-.01a.5.5 0 0 0 .14-.35.5.5 0 0 0 -.14-.35v-.01l-7-7a .5.5 0 0 0 -.71.71l6.15 6.15h-21.79a.5.5 0 0 0 -.5.5z" fill-rule="evenodd"></path></svg></div>
+                        <div class="col-5"><input placeholder="Check out" class="form-control" type="text" onfocus="(this.type='date')"  id="date" style="padding:0; border: none"></div>
+                      </div>
                     </div>
-                    <div>
-                      <label>CHECK OUT</label>
-                      <input type="text" value="dd/mês/ano" />
+                     
                     </div>
-                  </div>
 
-                  <div>
-                    <select name="hospedes">
-                      <option value="1">1 hóspede</option>
-                      <option value="2">2 hóspedes</option>
-                      <option value="3">3 hóspedes</option>
-                      <option value="4">4 hóspedes</option>
-                      <option value="5">5 hóspedes</option>
-                      <option value="6">6 hóspedes</option>
-                      <option value="7">7 hóspedes</option>
-                      <option value="8">8 hóspedes</option>
-                      <option value="9">9 hóspedes</option>
-                      <option value="10">10 hóspedes</option>
-                      <option value="11">11 hóspedes</option>
-                      <option value="12">12 hóspedes</option>
-                      <option value="13">13 hóspedes</option>
-                      <option value="14">14 hóspedes</option>
-                      <option value="15">15 hóspedes</option>
-                      <option value="16">16 hóspedes</option>
-                    </select>
-                  </div>
+<div class="form-group">
+  <select name="hospedes" class="form-control" style="width:70%">
+    <option value="1">1 hóspede</option>
+    <option value="2">2 hóspedes</option>
+    <option value="3">3 hóspedes</option>
+    <option value="4">4 hóspedes</option>
+    <option value="5">5 hóspedes</option>
+    <option value="6">6 hóspedes</option>
+    <option value="7">7 hóspedes</option>
+    <option value="8">8 hóspedes</option>
+    <option value="9">9 hóspedes</option>
+    <option value="10">10 hóspedes</option>
+    <option value="11">11 hóspedes</option>
+    <option value="12">12 hóspedes</option>
+    <option value="13">13 hóspedes</option>
+    <option value="14">14 hóspedes</option>
+    <option value="15">15 hóspedes</option>
+    <option value="16">16 hóspedes</option>
+  </select>
+</div>
 
-                  <div class="room__reserve-button" style="margin-top: 4%">
-                    <button type="submit">Pedir para reservar</button>
-                  </div>
+<div class="room__reserve-button" style="margin-top: 4%">
+  <button type="submit">Pedir para reservar</button>
+</div>
+
+
+</div>
+
                 </form>
               </div>
             </div>

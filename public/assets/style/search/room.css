@@ -2,9 +2,7 @@
   .room_pics {
     height: auto;
     max-height: 200px;
-
   }
-
 }
 
 .container-filter {
@@ -93,25 +91,24 @@
   margin: auto;
 }
 
-.room__description span{
+.room__description span {
   display: block;
 }
 
-.room__description-desc{
-
-
+.room__description-desc {
   overflow-wrap: break-word !important;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif !important;
   font-size: 12px !important;
   font-weight: 800 !important;
   line-height: 1.33333em !important;
   color: rgb(72, 72, 72) !important;
-
 }
 
-.room__description-title{
+.room__description-title {
   overflow-wrap: break-word !important;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif !important;
   font-size: 32px !important;
   font-weight: 800 !important;
   line-height: 1.125em !important;
@@ -119,4 +116,14 @@
   padding-top: 6px !important;
   padding-bottom: 6px !important;
   margin: 0px !important;
+}
+
+.room__description-city {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.43;
+  color: #484848;
+}
+.extra_info{
+  margin: 2%;
 }
