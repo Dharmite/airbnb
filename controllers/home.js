@@ -39,7 +39,8 @@ exports.createHome = async (req, res) => {
     let location = await db.findDocumentByProperty("locations", {
       name: req.params.city
     });
-    console.log(location, "location");
+    
+
     const newHome = await db.postToDB("homes", {
       name: req.body.name,
       beds: req.body.beds,
@@ -48,7 +49,7 @@ exports.createHome = async (req, res) => {
       description: req.body.description,
       location: location._id
     });
-    console.log(newHome, "newhome");
+    
     location.houses.push(newHome._id);
     location
       .save()

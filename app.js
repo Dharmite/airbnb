@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
 
 const general = require('./routes/generalPages');
 const home = require('./routes/home');
