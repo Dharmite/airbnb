@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+
 
 async function postToDB(model, document) {
   const modelFound = await mongoose.model(model);
@@ -7,14 +9,12 @@ async function postToDB(model, document) {
 }
 
 async function findDocumentByProperty(model, object) {
-    console.log(object);
   const modelFound = await mongoose.model(model);
   const resultPromise = await modelFound.findOne(object);
-  console.log(resultPromise);
   return resultPromise;
 }
 
 module.exports = {
   postToDB: postToDB,
-  findDocumentByProperty: findDocumentByProperty
+  findDocumentByProperty
 };
