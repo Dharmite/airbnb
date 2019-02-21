@@ -26,7 +26,7 @@ const Location = require("./models/Location");
 // Load home model
 const Home = require("./models/Home");
 
-var dbURL = process.env.MONGODB_URI || "mongodb://localhost/airbnbV10";
+var dbURL = process.env.MONGODB_URI || "mongodb://localhost/airbnbV11";
 
 // Connect to MongoDB
 mongoose
@@ -34,15 +34,13 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
-/*  Location.create({
+Location.create({
   name: "rome",
   houses: []
 
 })
   .then(house => console.log(house))
   .catch(err => console.log(err));
-
-  */
 
 // Use Routes
 app.use(general);
