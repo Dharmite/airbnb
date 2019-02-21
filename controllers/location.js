@@ -29,14 +29,13 @@ exports.showHomes = async (req, res) => {
   if (city.toUpperCase() === "ROME") {
     let searched_homes;
   
-    Location.findOne({name:city}).populate("houses")
-      .exec(function(err, location) {
-        if(err){
-          return console.error(err);
-        }
+    
+    await db.findDocumentByProperty("locations",{name:city},"houses")
+      .then(location => {
+
         searched_homes = location.houses;
         res.render("homes", { city, searched_homes });
-      })
+      }).catch(err => console.log(err))
   } else {
     res.render("notfound", { city });
   }
