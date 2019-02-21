@@ -8,10 +8,10 @@ async function postToDB(model, document) {
   return resultPromise;
 }
 
-async function findDocumentByProperty(model, object) {
+async function findDocumentByProperty(model, object, populate = '') {
   const modelFound = await mongoose.model(model);
-  const resultPromise = await modelFound.findOne(object);
-  return resultPromise;
+  return  modelFound.findOne(object).populate(populate);
+  
 }
 
 module.exports = {
