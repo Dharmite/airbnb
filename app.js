@@ -8,7 +8,6 @@ const general = require('./routes/generalPages');
 const home = require('./routes/home');
 const location = require('./routes/location');
 
-
 const app = express();
 
 app.set("view engine", "ejs");
@@ -23,10 +22,11 @@ app.use(bodyParser.json());
 
 // Load location model
 const Location = require("./models/Location");
+
 // Load home model
 const Home = require("./models/Home");
 
-var dbURL = process.env.MONGODB_URI || "mongodb://localhost/airbnbV7";
+var dbURL = process.env.MONGODB_URI || "mongodb://localhost/airbnbV11";
 
 // Connect to MongoDB
 mongoose
@@ -34,13 +34,13 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
-//   Location.create({
-//   name: "rome",
-//   houses: []
+Location.create({
+  name: "rome",
+  houses: []
 
-// })
-//   .then(house => console.log(house))
-//   .catch(err => console.log(err));
+})
+  .then(house => console.log(house))
+  .catch(err => console.log(err));
 
 // Use Routes
 app.use(general);
