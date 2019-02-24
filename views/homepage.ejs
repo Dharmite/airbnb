@@ -1,84 +1,288 @@
 <!DOCTYPE html>
 
 <html>
-
   <head>
+    <% include partials/header.ejs %>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/assets/style/homepage/main.css"
+    />
 
-      <% include partials/header.ejs %>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/assets/style/homepage/header.css"
+    />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/style/homepage/main.css"/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/assets/style/homepage/explore.css"
+    />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/style/homepage/header.css"/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/assets/style/homepage/plus.css"
+    />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/style/homepage/explore.css"/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/assets/style/homepage/viagem.css"
+    />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/style/homepage/plus.css"/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/assets/style/homepage/recomendado.css"
+    />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/style/homepage/viagem.css"/>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/style/homepage/recomendado.css"/>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <title>Aluguer de Férias, Casas, Experiências e Lugares - Airbnb</title>
-
   </head>
 
   <body>
-
     <header>
-
       <div class="landingPage">
-
         <div class="landingPage__header">
-
           <div class="landingPage__header--logo">
-
             <img src="/assets/pictures/airbnb-white.png" alt="Airbnb logo" />
-
           </div>
 
-          <div class="landingPage__header--info">
+          <% if(user) { %>
 
-            <nav>
+            <div class="landingPage__header--info">
+              <nav>
+                <ul>
+                  <li>Torne-se um anfitrião</li>
+                  <li>Sair</li>
+                  <li><img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar"></li>
+                </ul>
+              </nav>
+  
+  <!--aqui!!! -->
+            </div>
 
-              <ul>
+          <% } else { %>
 
-                <li>Torne-se um anfitrião</li>
-                <li>Ajuda</li>
-                <li>Inscreva-se</li>
-                <li>Entre</li>
 
-              </ul>
+            <div class="landingPage__header--info">
+              <nav>
+                <ul>
+                  <li>Torne-se um anfitrião</li>
+                  <li>Ajuda</li>
+                  <li data-toggle="modal" data-target="#registerModal">
+                    Inscreva-se
+                  </li>
+                  <li data-toggle="modal" data-target="#loginModal">Entre</li>
+                </ul>
+              </nav>
+  
+  <!--aqui!!! -->
+            </div>
 
-            </nav>
+          <% } %>
 
+
+
+          <!--aqui modal-->
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="registerModal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Inscreva-se
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="username">username</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="username"
+                          aria-describedby="username"
+                          placeholder="username"
+                          name="username"
+                          required
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="password">password</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="password"
+                          aria-describedby="password"
+                          placeholder="password"
+                          name="password"
+                          required
+                        />
+                      </div>
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-dismiss="modal"
+                      >
+                        Fechar
+                      </button>
+                      <button class="btn btn-primary" id="sign-up">
+                        Registar
+                      </button>
+                    </form>
+                  </div>
+                  <div class="modal-footer"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="errorModal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header"></div>
+                  <div class="modal-body"><p style="color:red">Erro</p></div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Fechar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--aqui!!! -->
+            <div
+            class="modal fade"
+            id="loginModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Entrar
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="username">username</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="username-login"
+                        aria-describedby="username"
+                        placeholder="username"
+                        name="username"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="password-login">password</label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="password-login"
+                        aria-describedby="password-login"
+                        placeholder="password"
+                        name="password"
+                        required
+                      />
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Fechar
+                    </button>
+                    <button class="btn btn-primary" id="login">
+                      Entrar
+                    </button>
+                  </form>
+                </div>
+                <div class="modal-footer"></div>
+              </div>
+            </div>
           </div>
-
         </div>
 
         <div class="landingPage__header--form">
-
           <div class="landingPage__form--title">
             <h1>Reserve acomodações e experiências únicas.</h1>
           </div>
 
           <div class="landingPage__form--inputs">
-
             <form>
-
               <div class="landingPage__form--where">
                 <label>ONDE</label>
                 <input
                   type="text"
                   placeholder="Em qualquer lugar"
                   name="where"
-                  id="where" 
+                  id="where"
                 />
               </div>
 
               <div class="landingPage__form--checkInOut">
-
                 <div class="landingPage__form--checkIn">
                   <label>CHECK IN</label>
                   <input type="text" value="dd/mês/ano" name="indate" />
@@ -88,15 +292,12 @@
                   <label>CHECK OUT</label>
                   <input type="text" value="dd/mês/ano" name="outdate" />
                 </div>
-
               </div>
 
               <div class="landingPage__form--hospedes">
-
                 <label>HÓSPEDES</label>
 
                 <select name="hospedes">
-
                   <option value="1">1 hóspede</option>
                   <option value="2">2 hóspedes</option>
                   <option value="3">3 hóspedes</option>
@@ -113,25 +314,19 @@
                   <option value="14">14 hóspedes</option>
                   <option value="15">15 hóspedes</option>
                   <option value="16">16 hóspedes</option>
-
                 </select>
-
               </div>
 
               <div class="landingPage__form--pesquisar">
                 <button type="submit" id="pesquisar">Pesquisar</button>
               </div>
-
             </form>
-
           </div>
-
         </div>
 
         <div class="landingPage__header--oregon">
           <p>Mais de 300</p>
           <p>acomodações únicas no Oregon</p>
-          
         </div>
 
         <div class="landingPage__logo">
@@ -164,31 +359,27 @@
             </div>
 
             <div class="landingPage__form--hospedes">
+              <label>HÓSPEDES</label>
 
-                <label>HÓSPEDES</label>
-
-                <select name="hospedes">
-
-                  <option value="1">1 hóspede</option>
-                  <option value="2">2 hóspedes</option>
-                  <option value="3">3 hóspedes</option>
-                  <option value="4">4 hóspedes</option>
-                  <option value="5">5 hóspedes</option>
-                  <option value="6">6 hóspedes</option>
-                  <option value="7">7 hóspedes</option>
-                  <option value="8">8 hóspedes</option>
-                  <option value="9">9 hóspedes</option>
-                  <option value="10">10 hóspedes</option>
-                  <option value="11">11 hóspedes</option>
-                  <option value="12">12 hóspedes</option>
-                  <option value="13">13 hóspedes</option>
-                  <option value="14">14 hóspedes</option>
-                  <option value="15">15 hóspedes</option>
-                  <option value="16">16 hóspedes</option>
-
-                </select>
-
-              </div>
+              <select name="hospedes">
+                <option value="1">1 hóspede</option>
+                <option value="2">2 hóspedes</option>
+                <option value="3">3 hóspedes</option>
+                <option value="4">4 hóspedes</option>
+                <option value="5">5 hóspedes</option>
+                <option value="6">6 hóspedes</option>
+                <option value="7">7 hóspedes</option>
+                <option value="8">8 hóspedes</option>
+                <option value="9">9 hóspedes</option>
+                <option value="10">10 hóspedes</option>
+                <option value="11">11 hóspedes</option>
+                <option value="12">12 hóspedes</option>
+                <option value="13">13 hóspedes</option>
+                <option value="14">14 hóspedes</option>
+                <option value="15">15 hóspedes</option>
+                <option value="16">16 hóspedes</option>
+              </select>
+            </div>
 
             <div class="landingPage__form--pesquisar">
               <button type="submit" id="pesquisar">Pesquisar</button>
@@ -356,14 +547,68 @@
     </main>
 
     <script>
-    
-      document.getElementById("pesquisar").addEventListener("click", (e)=>{
-
+      document.getElementById("pesquisar").addEventListener("click", e => {
         e.preventDefault();
         console.log();
         location.replace(`/s/${document.getElementById("where").value}/all`);
-
       });
-    
     </script>
-      <% include partials/footer.ejs %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.getElementById("sign-up").addEventListener("click", e => {
+        e.preventDefault();
+        $.ajax({
+          type: "POST",
+          url: "/register",
+          data: {
+            username: document.getElementById("username").value,
+            password: document.getElementById("password").value
+          }
+        })
+          .done(function(data) {
+            location.replace(`/profile`);
+          })
+          .fail(function() {
+
+            $("#registerModal").modal('hide');
+            $("#errorModal").modal('show');
+            
+          });
+      });
+
+      document.getElementById("login").addEventListener("click", e => {
+        e.preventDefault();
+        $.ajax({
+          type: "POST",
+          url: "/login",
+          data: {
+            username: document.getElementById("username-login").value,
+            password: document.getElementById("password-login").value
+          }
+        })
+          .done(function(data) {
+            location.replace(`/profile`);
+
+          })
+          .fail(function() {
+            $("#loginModal").modal('hide');
+            $("#errorModal").modal('show');
+
+          });
+      });
+
+    </script>
+    <% include partials/footer.ejs %>
+  </body>
+</html>
