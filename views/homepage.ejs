@@ -579,9 +579,10 @@
           .done(function(data) {
             location.replace(`/profile`);
           })
-          .fail(function() {
-
+          .fail(function(err) {
+            console.log(err.responseText);
             $("#registerModal").modal('hide');
+
             $("#errorModal").modal('show');
             
           });
@@ -601,7 +602,8 @@
             location.replace(`/profile`);
 
           })
-          .fail(function() {
+          .fail(function(err) {
+            console.log(err);
             $("#loginModal").modal('hide');
             $("#errorModal").modal('show');
 

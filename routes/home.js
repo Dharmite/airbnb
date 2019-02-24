@@ -13,4 +13,9 @@ router.get("/:city/homes/new", auth_middleware.isLoggedIn ,home_controller.showC
 
 router.post("/:city/homes", home_controller.createHome);
 
+router.get("/rooms/:room_id/edit", home_controller.showEditPage);
+
+router.put("/rooms/:room_id/", home_controller.editPage);
+
+
 module.exports = router;
