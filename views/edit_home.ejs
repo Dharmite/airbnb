@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Edit home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous"
+  />
+    <link
+    rel="stylesheet"
+    type="text/css"
+    media="screen"
+    href="/assets/style/homepage/header.css"
+  />
+
+  <link
+  rel="stylesheet"
+  type="text/css"
+  media="screen"
+  href="/assets/style/search/header.css"
+/>
+  </head>
+  <body>
+    <header>
+      <% include partials/navbar.ejs %>
+    </header>
+
+
+    
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-6">
+            <h1>Edit home</h1>
+            <form>
+              <div class="form-group">
+                <label for="image">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  aria-describedby="name"
+                  placeholder="name"
+                  name="name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="beds">Number of beds</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="beds"
+                  aria-describedby="beds"
+                  min="1"
+                  name="beds"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="main_image">image url</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="main_image"
+                  aria-describedby="main_image"
+                  placeholder="image url"
+                  name="main_image"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="price">Price</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="price"
+                  aria-describedby="price"
+                  min="1"
+                  name="price"
+                  required
+                />
+              </div>
+  
+              <div class="form-group">
+                <label for="description">Description</label>
+                <textarea 
+                  class="form-control"
+                  id="description"
+                  aria-describedby="description"
+                  name="description"
+                  required
+                  /> </textarea>
+              </div>
+  
+              <button class="btn btn-primary" id="editHome">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div> 
+
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+      <script>
+      document.getElementById("editHome").addEventListener("click", e => {
+        e.preventDefault();
+        $.ajax({
+          type: "PUT",
+          url: "/rooms/<%= homeId %>/",
+          data: {
+            name: document.getElementById("name").value,
+            beds: document.getElementById("beds").value,
+            price: document.getElementById("price").value,
+            main_image: document.getElementById("main_image").value,
+            description: document.getElementById("description").value
+          }
+        })
+          .done(function(data) {
+            location.replace(`/rooms/<%= homeId %>`);
+
+          })
+          .fail(function(err) {
+            console.log(err);
+            alert(err);
+            
+          });
+      });
+      
+      </script>
+    
+  </body>
+</html>

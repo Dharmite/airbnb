@@ -6,7 +6,8 @@ const Home = require("../models/Home");
 const db = require("../utilities/db/db");
 
 exports.showHome = (req, res) => {
-  Home.findById(req.params.room_id).populate("host")
+  Home.findById(req.params.room_id)
+    .populate("host")
     .then(room => {
       // como vou buscar city???
       Location.findOne({ _id: room.location }).then(location => {
@@ -39,7 +40,6 @@ exports.createHome = async (req, res) => {
     let location = await db.findDocumentByProperty("locations", {
       name: req.params.city
     });
-    
 
     const newHome = await db.postToDB("homes", {
       host: req.user._id,
@@ -50,8 +50,10 @@ exports.createHome = async (req, res) => {
       description: req.body.description,
       location: location._id
     });
-    
+
     location.houses.push(newHome._id);
+    // await location.save()
+    // res.redirect(`/${req.params.city}/homes`);
     location
       .save()
       .then(result => res.redirect(`/${req.params.city}/homes`))
@@ -59,4 +61,23 @@ exports.createHome = async (req, res) => {
   } catch (error) {
     return error;
   }
+};
+
+exports.showEditPage = (req, res) => {
+  res.render("edit_home", {homeId: req.params.room_id});
+};
+
+exports.editPage = (req, res) => {
+  Home.findOneAndUpdate(req.params.room_id, {
+    name: req.body.name,
+    beds: req.body.beds,
+    price: req.body.price,
+    main_image: req.body.main_image,
+    description: req.body.description
+  }).then(house =>{
+    house.save().then(savedHouse =>{
+      console.log(savedHouse,"savedHouse");
+      res.send("sucess");
+    }).catch(err => res.json(err))
+  });
 };

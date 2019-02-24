@@ -16,9 +16,9 @@ exports.register = (req, res) => {
         req.login(user, function(err) {
           if (err) {
             console.log(err);
-            return res.send("erro!");
+            return res.status(401).send(err);
           }
-          res.redirect("/profile");
+          // res.redirect("/profile");
         });
       }
     }
