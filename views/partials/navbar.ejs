@@ -16,19 +16,35 @@
       <input type="text"  />
     </div>
 
-    <div class="col-lg-6 col-md-6 header-container__options">
-      <div class="header-container__options--option anfitriao">
-        <p>Torne-se um anfitrião</p>
+    <% if(user){ %>
+      <div class="col-lg-6 col-md-6 header-container__options">
+        <div class="header-container__options--option anfitriao">
+          <p>Torne-se um anfitrião</p>
+        </div>
+
+        <div class="header-container__options--option inscrever">
+          <p>Sair</p>
+        </div>
+        <div class="header-container__options--option entrar">
+          <p><img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar"></p>
+        </div>
       </div>
-      <div class="header-container__options--option ajuda">
-        <p>Ajuda</p>
+    <%}else{ %>
+      <div class="col-lg-6 col-md-6 header-container__options">
+        <div class="header-container__options--option anfitriao">
+          <p>Torne-se um anfitrião</p>
+        </div>
+        <div class="header-container__options--option ajuda">
+          <p>Ajuda</p>
+        </div>
+        <div class="header-container__options--option inscrever">
+          <p>Inscreva-se</p>
+        </div>
+        <div class="header-container__options--option entrar">
+          <p>Entre</p>
+        </div>
       </div>
-      <div class="header-container__options--option inscrever">
-        <p>Inscreva-se</p>
-      </div>
-      <div class="header-container__options--option entrar">
-        <p>Entre</p>
-      </div>
-    </div>
+    <%} %>
+
   </div>
 </div>
