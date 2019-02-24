@@ -34,7 +34,7 @@ const Home = require("./models/Home");
 // Load User model
 const User = require("./models/User");
 
-var dbURL = process.env.MONGODB_URI || "mongodb://localhost/airbnbV11";
+var dbURL = process.env.MONGODB_URI || "mongodb://localhost/airbnbV12";
 
 // Connect to MongoDB
 mongoose
@@ -42,14 +42,14 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
-/* Location.create({
-  name: "rome",
-  houses: []
+//  Location.create({
+//   name: "rome",
+//   houses: []
 
-})
-  .then(house => console.log(house))
-  .catch(err => console.log(err));
- */
+// })
+//   .then(house => console.log(house))
+//   .catch(err => console.log(err));
+
 
 app.use(
   expressSession({

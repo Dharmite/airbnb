@@ -63,12 +63,17 @@
         <div class="row">
           <div class="col-lg-7 col-md-12 col-sm-12">
             <div class="room__description">
-              <span class="room__description-desc"
-                ><%= room.description %></span
+              <span class="room__description-desc"><%= room.description %></span
               >
-              <span class="room__description-title"> <%= room.name %></span>
+              <div style="display: flex; justify-content: space-between">
+              <div><span class="room__description-title"> <%= room.name %></span> </div>
+              <div><span  style="padding-right: 10px;">
+                <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar">
+                <p><%= room.host.username %></p>
+              </span></div>
+            </div>
               <span class="room__description-city"><%= location.name %></span>
-
+             
               <div class="extra_info">
 
                    <h6 class="extra_info-title"><i class="fas fa-home"></i> <%= room.description %></h6>
