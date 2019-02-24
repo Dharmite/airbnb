@@ -12,21 +12,15 @@ exports.register = (req, res) => {
       if (err) {
         // console.log(err);
         res.status(401).send(err.message);
-      }else{
-        res.send({ msg: "Sucess" });
+      } else {
+        req.login(user, function(err) {
+          if (err) {
+            console.log(err);
+            return res.send("erro!");
+          }
+          res.redirect("/profile");
+        });
       }
-
-      req.login(user, function(err) {
-        if (err) {
-          console.log(err);
-          return res.send("erro!");
-        }
-        res.redirect("/secret");
-      });
-
-      //else {
-      //   res.send({ msg: "Sucess" });
-      // }
     }
   );
 };
@@ -36,7 +30,5 @@ exports.showProfile = (req, res) => {
 };
 
 exports.login = (req, res) => {
-    
   res.send("Logged in");
-
 };
