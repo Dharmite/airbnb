@@ -3,203 +3,203 @@
 @media screen and (min-width: 1128px) {
   .landingPage {
     /* height: 100%; */
-    height: 100vh 100vw;
-    position: relative;
-    background-image: url("/assets/pictures/landing-page.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: grid;
+    height: 100vh 100vw !important;
+    position: relative !important;
+    background-image: url("/assets/pictures/landing-page.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    display: grid !important;
   }
 
   .landingPage__header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 78px;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 78px !important;
   }
 
   .landingPage__header--logo {
-    display: flex;
+    display: flex !important;
   }
 
   .landingPage__header--logo img {
-    width: 4%;
-    height: 30%;
-    align-self: center;
-    padding-left: 24px;
-    padding-right: 24px;
+    width: 12% !important;
+    height: 30% !important;
+    align-self: center !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
   }
 
   .landingPage__header--info {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
   }
 
   .landingPage__header--info li {
-    display: inline;
-    padding: 8px;
-    color: rgb(255, 255, 255);
-    font-family: "Circular";
-    line-height: 1px;
-    margin: 10px;
-    font-weight: 600;
+    display: inline !important;
+    padding: 8px !important;
+    color: rgb(255, 255, 255) !important;
+    font-family: "Circular" !important;
+    line-height: 1px !important;
+    margin: 10px !important;
+    font-weight: 600 !important;
   }
 
   .landingPage__header--form {
-    border-radius: 4px;
-    background: #ffffff;
-    padding: 32px;
-    padding-bottom: 24px;
-    width: 400px;
-    height: 420px;
-    margin-bottom: 64px;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-    margin-left: 155.5px;
-    margin-right: 134.5px;
+    border-radius: 4px !important;
+    background: #ffffff !important;
+    padding: 32px !important;
+    padding-bottom: 24px !important;
+    width: 500px !important;
+    height: 480px !important;
+    margin-bottom: 64px !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12) !important;
+    margin-left: 155.5px !important;
+    margin-right: 134.5px !important;
   }
 
   .landingPage__form--title h1 {
-    font-size: 30px;
-    line-height: 36px;
-    letter-spacing: normal;
+    font-size: 30px !important;
+    line-height: 36px !important;
+    letter-spacing: normal !important;
     font-family: "Circular", "-apple-system", "BlinkMacSystemFont", "Roboto",
-      "Helvetica Neue", "sans-serif";
-    color: #484848;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    margin: 0px;
-    padding: 0px;
+      "Helvetica Neue", "sans-serif" !important;
+    color: #484848 !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    margin: 0px !important;
+    padding: 0px !important;
   }
 
   .landingPage__form--inputs {
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
   }
 
   .landingPage__form--where {
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
   }
 
   .landingPage__form--where > label {
-    display: block;
-    margin-bottom: 8px;
+    display: block !important;
+    margin-bottom: 8px !important;
   }
 
   .landingPage__form--where > input {
-    width: 100%;
-    height: 48px;
-    border-radius: 4px;
-    border: 1px solid #ebebeb;
-    padding-left: 2px;
+    width: 100% !important;
+    height: 48px !important;
+    border-radius: 4px !important;
+    border: 1px solid #ebebeb !important;
+    padding-left: 2px !important;
   }
 
   .landingPage__form--checkInOut {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
   }
 
   .landingPage__form--checkIn > input {
-    display: block;
-    margin-bottom: 8px;
-    height: 48px;
-    border-radius: 4px;
-    border: 1px solid #ebebeb;
-    width: 100%;
-    padding-left: 8px;
-    color: grey;
+    display: block !important;
+    margin-bottom: 8px !important;
+    height: 48px !important;
+    border-radius: 4px !important;
+    border: 1px solid #ebebeb !important;
+    width: 100% !important;
+    padding-left: 8px !important;
+    color: grey !important;
   }
 
   .landingPage__form--checkOut > input {
-    display: block;
-    margin-bottom: 8px;
-    margin-bottom: 8px;
-    height: 48px;
-    border-radius: 4px;
-    border: 1px solid #ebebeb;
-    width: 100%;
-    color: grey;
-    padding-left: 8px;
+    display: block !important;
+    margin-bottom: 8px !important;
+    margin-bottom: 8px !important;
+    height: 48px !important;
+    border-radius: 4px !important;
+    border: 1px solid #ebebeb !important;
+    width: 100% !important;
+    color: grey !important;
+    padding-left: 8px !important;
   }
 
   .landingPage__form--hospedes select {
-    color: grey;
+    color: grey !important;
   }
 
   .landingPage__form--hospedes > label {
-    display: block;
-    margin-bottom: 8px;
+    display: block !important;
+    margin-bottom: 8px !important;
   }
 
   .landingPage__form--hospedes > select {
-    width: 100%;
-    height: 48px;
-    border-radius: 4px;
-    border: 1px solid #ebebeb;
+    width: 100% !important;
+    height: 48px !important;
+    border-radius: 4px !important;
+    border: 1px solid #ebebeb !important;
   }
 
   .landingPage__form--pesquisar {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 10px;
-    margin-top: 16px;
+    display: flex !important;
+    justify-content: flex-end !important;
+    margin-bottom: 10px !important;
+    margin-top: 16px !important;
   }
 
   .landingPage__form--pesquisar > button {
     font-family: "Circular", "-apple-system", "BlinkMacSystemFont", "Roboto",
-      "Helvetica Neue", "sans-serif";
-    color: #ffffff;
-    border-color: transparent;
-    background: #ff5a5f;
-    box-shadow: none;
-    min-width: 77px;
-    padding-right: 24px;
-    padding-left: 24px;
-    border-style: solid;
-    border-width: 2px;
-    font-weight: 800;
-    padding-bottom: 12px;
-    padding-top: 12px;
-    text-align: center;
-    align-items: center;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 16px;
-    line-height: 22px;
-    margin: 0px;
-    display: flex;
-    align-self: center;
+      "Helvetica Neue", "sans-serif" !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    background: #ff5a5f !important;
+    box-shadow: none !important;
+    min-width: 77px !important;
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+    border-style: solid !important;
+    border-width: 2px !important;
+    font-weight: 800 !important;
+    padding-bottom: 12px !important;
+    padding-top: 12px !important;
+    text-align: center !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    border-radius: 4px !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    margin: 0px !important;
+    display: flex !important;
+    align-self: center !important;
   }
 
   .landingPage__header--oregon {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: -50px;
-    margin-right: 20px;
-    color: white;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    margin-top: -50px !important;
+    margin-right: 20px !important;
+    color: white !important;
   }
   .landingPage__header--oregon > p {
-    margin: 0px;
+    margin: 0px !important;
   }
 
   .landingPage__header--form1 {
-    display: none;
+    display: none !important;
   }
 
   .landingPage_responsive {
-    display: none;
+    display: none !important;
   }
 
   .landingPage__title {
-    display: none;
+    display: none !important;
   }
 
   .landingPage__logo {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -207,26 +207,26 @@
 
 @media screen and (max-width: 1128px) {
   .landingPage {
-    height: 232px;
-    width: 100%;
-    position: relative;
-    background-image: url("/assets/pictures/landing-page.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: grid;
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-bottom: 0px;
-    padding-top: 0px;
+    height: 232px !important;
+    width: 100% !important;
+    position: relative !important;
+    background-image: url("/assets/pictures/landing-page.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    display: grid !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
   }
 
   .landingPage__header {
-    display: none;
+    display: none !important;
   }
 
   .landingPage__header--form {
-    display: none;
+    display: none !important;
   }
 
   .landingPage__title h1 {
@@ -359,13 +359,19 @@ form label {
   line-height: 1.33333em;
   letter-spacing: 0.0833333em;
   color: rgb(72, 72, 72);
-  
 }
 
-form input{
+form input {
   font-size: 17px !important;
 }
 
-form select{
+form select {
   font-size: 17px !important;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
