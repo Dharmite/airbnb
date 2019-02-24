@@ -32,3 +32,13 @@ exports.showProfile = (req, res) => {
 exports.login = (req, res) => {
   res.send("Logged in");
 };
+
+// log out
+exports.logout = function(req, res) {
+    
+  // com este metetodo o passport destroi os dados do user nesta sessão
+  // não mexe na base de dados
+  req.logout();
+  res.redirect("/");
+  
+}

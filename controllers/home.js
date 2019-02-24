@@ -6,12 +6,13 @@ const Home = require("../models/Home");
 const db = require("../utilities/db/db");
 
 exports.showHome = (req, res) => {
+  let homeId = req.params.room_id;
   Home.findById(req.params.room_id)
     .populate("host")
     .then(room => {
       // como vou buscar city???
       Location.findOne({ _id: room.location }).then(location => {
-        res.render("home", { room, location });
+        res.render("home", { room, location, homeId });
       });
     })
     .catch(err => console.error(err));
@@ -64,7 +65,7 @@ exports.createHome = async (req, res) => {
 };
 
 exports.showEditPage = (req, res) => {
-  res.render("edit_home", {homeId: req.params.room_id});
+  res.render("edit_home", { homeId: req.params.room_id });
 };
 
 exports.editPage = (req, res) => {
@@ -74,10 +75,27 @@ exports.editPage = (req, res) => {
     price: req.body.price,
     main_image: req.body.main_image,
     description: req.body.description
-  }).then(house =>{
-    house.save().then(savedHouse =>{
-      console.log(savedHouse,"savedHouse");
-      res.send("sucess");
-    }).catch(err => res.json(err))
+  }).then(house => {
+    house
+      .save()
+      .then(savedHouse => {
+        console.log(savedHouse, "savedHouse");
+        res.send("sucess");
+      })
+      .catch(err => res.json(err));
+  });
+};
+
+exports.deletePage = (req, res) => {
+  let location_id;
+  let house_id;
+  Home.findByIdAndRemove(req.params.room_id).then(result => {
+    Location.findByIdAndUpdate(result.location, {
+      $pull: { houses: result._id }
+    }).then(location => {
+      location_id = location._id;
+      house_id = result._id;
+      res.json(location);
+    });
   });
 };
