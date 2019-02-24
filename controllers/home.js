@@ -6,7 +6,7 @@ const Home = require("../models/Home");
 const db = require("../utilities/db/db");
 
 exports.showHome = (req, res) => {
-  Home.findById(req.params.room_id)
+  Home.findById(req.params.room_id).populate("host")
     .then(room => {
       // como vou buscar city???
       Location.findOne({ _id: room.location }).then(location => {
@@ -42,6 +42,7 @@ exports.createHome = async (req, res) => {
     
 
     const newHome = await db.postToDB("homes", {
+      host: req.user._id,
       name: req.body.name,
       beds: req.body.beds,
       price: req.body.price,
