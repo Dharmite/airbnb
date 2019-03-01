@@ -42,13 +42,13 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
-//  Location.create({
-//   name: "rome",
-//   houses: []
+ Location.create({
+  name: "rome",
+  houses: []
 
-// })
-//   .then(house => console.log(house))
-//   .catch(err => console.log(err));
+})
+  .then(house => console.log(house))
+  .catch(err => console.log(err));
 
 app.use(
   expressSession({
