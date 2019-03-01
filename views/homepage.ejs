@@ -51,8 +51,6 @@
       href="/assets/style/homepage/recomendado.css"
     />
 
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <title>Aluguer de Férias, Casas, Experiências e Lugares - Airbnb</title>
@@ -68,122 +66,95 @@
 
           <% if(user) { %>
 
-            <div class="landingPage__header--info">
-              <nav>
-                <ul>
-                  <li>Torne-se um anfitrião</li>
-                  <li>Sair</li>
-                  <li><img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar"></li>
-                </ul>
-              </nav>
-  
-  <!--aqui!!! -->
-            </div>
+          <div class="landingPage__header--info">
+            <nav>
+              <ul>
+                <li>Torne-se um anfitrião</li>
+                <li><a href="/logout">Sair</a></li>
+                <li>
+                  <img
+                    src="https://www.w3schools.com/howto/img_avatar.png"
+                    alt="Avatar"
+                    class="avatar"
+                  />
+                </li>
+              </ul>
+            </nav>
+
+            <!--aqui!!! -->
+          </div>
 
           <% } else { %>
 
+          <div class="landingPage__header--info">
+            <nav>
+              <ul>
+                <li>Torne-se um anfitrião</li>
+                <li>Ajuda</li>
+                <li data-toggle="modal" data-target="#registerModal">
+                  Inscreva-se
+                </li>
+                <li data-toggle="modal" data-target="#loginModal">Entre</li>
+              </ul>
+            </nav>
 
-            <div class="landingPage__header--info">
-              <nav>
-                <ul>
-                  <li>Torne-se um anfitrião</li>
-                  <li>Ajuda</li>
-                  <li data-toggle="modal" data-target="#registerModal">
-                    Inscreva-se
-                  </li>
-                  <li data-toggle="modal" data-target="#loginModal">Entre</li>
-                </ul>
-              </nav>
-  
-  <!--aqui!!! -->
-            </div>
+            <!--aqui!!! -->
+          </div>
 
           <% } %>
 
-
-
           <!--aqui modal-->
-            <!-- Modal -->
-            <div
-              class="modal fade"
-              id="registerModal"
-              tabindex="-1"
-              role="dialog"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                      Inscreva-se
-                    </h5>
-                    <button
-                      type="button"
-                      class="close"
-                      data-dismiss="modal"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form>
-                      <div class="form-group">
-                        <label for="username">username</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="username"
-                          aria-describedby="username"
-                          placeholder="username"
-                          name="username"
-                          required
-                        />
-                      </div>
-
-                      <div class="form-group">
-                        <label for="password">password</label>
-                        <input
-                          type="password"
-                          class="form-control"
-                          id="password"
-                          aria-describedby="password"
-                          placeholder="password"
-                          name="password"
-                          required
-                        />
-                      </div>
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-dismiss="modal"
-                      >
-                        Fechar
-                      </button>
-                      <button class="btn btn-primary" id="sign-up">
-                        Registar
-                      </button>
-                    </form>
-                  </div>
-                  <div class="modal-footer"></div>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="registerModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="registerModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="registerModalLabel">
+                    Inscreva-se
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
-              </div>
-            </div>
-            <!-- Modal -->
-            <div
-              class="modal fade"
-              id="errorModal"
-              tabindex="-1"
-              role="dialog"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header"></div>
-                  <div class="modal-body"><p style="color:red">Erro</p></div>
-                  <div class="modal-footer">
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="username">username</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        aria-describedby="username"
+                        placeholder="username"
+                        name="username"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="password">password</label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        aria-describedby="password"
+                        placeholder="password"
+                        name="password"
+                        required
+                      />
+                    </div>
                     <button
                       type="button"
                       class="btn btn-secondary"
@@ -191,24 +162,29 @@
                     >
                       Fechar
                     </button>
-                  </div>
+                    <button class="btn btn-primary" id="sign-up">
+                      Registar
+                    </button>
+                  </form>
                 </div>
+                <div class="modal-footer"></div>
               </div>
             </div>
+          </div>
 
-            <!--aqui!!! -->
-            <div
+          <!--aqui!!! -->
+          <div
             class="modal fade"
             id="loginModal"
             tabindex="-1"
             role="dialog"
-            aria-labelledby="exampleModalLabel"
+            aria-labelledby="loginModalLabel"
             aria-hidden="true"
           >
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">
+                  <h5 class="modal-title" id="loginModalLabel">
                     Entrar
                   </h5>
                   <button
@@ -329,8 +305,35 @@
           <p>acomodações únicas no Oregon</p>
         </div>
 
-        <div class="landingPage__logo">
-          <img src="/assets/pictures/airbnb.png" alt="Airbnb logo" />
+        <div class="landingPage__logo dropdown">
+          <img
+            class="dropdown-toggle"
+            src="/assets/pictures/airbnb-red.png"
+            alt="Airbnb logo"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          />
+          <i class="fas fa-arrow-down"></i>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Torne-se um anfitrião</a>
+            <a class="dropdown-item" href="#">Ajuda</a>
+            <a
+              data-toggle="modal"
+              data-target="#registerModal"
+              class="dropdown-item"
+              href="#"
+              >Inscreva-se</a
+            >
+            <a
+              data-toggle="modal"
+              data-target="#loginModal"
+              class="dropdown-item"
+              href="#"
+              >Entre</a
+            >
+          </div>
         </div>
 
         <div class="landingPage__title">
@@ -577,14 +580,13 @@
           }
         })
           .done(function(data) {
+            console.log("entrei")
             location.replace(`/profile`);
           })
           .fail(function(err) {
-            console.log(err.responseText);
-            $("#registerModal").modal('hide');
-
-            $("#errorModal").modal('show');
-            
+            document.getElementById("registerModalLabel").style.color = "red";
+            document.getElementById("registerModalLabel").innerText =
+              err.responseText;
           });
       });
 
@@ -600,16 +602,13 @@
         })
           .done(function(data) {
             location.replace(`/profile`);
-
           })
           .fail(function(err) {
-            console.log(err);
-            $("#loginModal").modal('hide');
-            $("#errorModal").modal('show');
-
+            document.getElementById("loginModalLabel").style.color = "red";
+            document.getElementById("loginModalLabel").innerText =
+              err.responseText;
           });
       });
-
     </script>
     <% include partials/footer.ejs %>
   </body>

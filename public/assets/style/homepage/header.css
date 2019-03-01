@@ -46,6 +46,21 @@
     font-weight: 600 !important;
   }
 
+  .landingPage__header--info li:hover {
+    cursor: pointer;
+  }
+
+  .landingPage__header--info li > a {
+    text-decoration: none;
+    display: inline !important;
+    padding: 8px !important;
+    color: rgb(255, 255, 255) !important;
+    font-family: "Circular" !important;
+    line-height: 1px !important;
+    margin: 10px !important;
+    font-weight: 600 !important;
+  }
+
   .landingPage__header--form {
     border-radius: 4px !important;
     background: #ffffff !important;
@@ -348,7 +363,11 @@
     justify-content: center;
   }
   .landingPage__logo img {
-    display: none;
+    height: 30%;
+    width: 7%;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-bottom: 1%;
   }
 }
 

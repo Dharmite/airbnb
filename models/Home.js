@@ -32,7 +32,6 @@ const HomeSchema = new Schema({
   location: {
     type: Schema.Types.ObjectId,
     ref: "locations"
-
   }
 });
 

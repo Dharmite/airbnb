@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const general_controller = require('../controllers/generalPages');
-
+const general_controller = require("../controllers/generalPages");
 
 router.get("/", general_controller.showHomepage);
 

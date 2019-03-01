@@ -1,6 +1,4 @@
-// Load location model
 const Location = require("../models/Location");
-// Load home model
 const Home = require("../models/Home");
 
 const db = require("../utilities/db/db");
@@ -28,14 +26,14 @@ exports.showHomes = async (req, res) => {
 
   if (city.toUpperCase() === "ROME") {
     let searched_homes;
-  
-    
-    await db.findDocumentByProperty("locations",{name:city},"houses")
-      .then(location => {
 
+    await db
+      .findDocumentByProperty("locations", { name: city }, "houses")
+      .then(location => {
         searched_homes = location.houses;
         res.render("homes", { city, searched_homes });
-      }).catch(err => console.log(err))
+      })
+      .catch(err => console.log(err));
   } else {
     res.render("notfound", { city });
   }

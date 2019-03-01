@@ -4,17 +4,16 @@
   
 }
 
-.exploreAirbnb__title {
+.exploreAirbnb__title h3{
   font-weight: 800!important;
-  margin-bottom: 0px!important;
   font-size: 24px!important;
   line-height: 30px!important;
   letter-spacing: normal!important;
   font-family: "Circular", "-apple-system", "BlinkMacSystemFont", "Roboto",
     "Helvetica Neue", sans-serif!important;
   color: rgb(72, 72, 72)!important;
-  padding-top: 2px!important;
-  padding-bottom: 2px!important;
+  padding-top: 15px!important;
+  padding-bottom: 15px!important;
 }
 
 .exploreAirbnb__info {

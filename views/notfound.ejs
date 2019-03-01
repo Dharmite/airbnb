@@ -2,11 +2,9 @@
 
 <html>
   <head>
-
     <% include partials/header.ejs %>
 
     <title>Homes - Airbnb</title>
-
 
     <link
       rel="stylesheet"
@@ -14,7 +12,6 @@
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
     />
-
 
     <link
       rel="stylesheet"
@@ -38,36 +35,26 @@
     />
 
     <link
-    rel="stylesheet"
-    type="text/css"
-    media="screen"
-    href="/assets/style/homepage/header.css"
-  />
-
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/assets/style/homepage/header.css"
+    />
   </head>
 
   <body>
     <header>
-        <% include partials/navbar.ejs %>
-
+      <% include partials/navbar.ejs %>
     </header>
 
     <main>
-      <div class="container" id="filters_container">
-        <div class="row" id="filters">
-          <p style="background-color: darkgreen;color: white">Cidade: <%= city %></p>
-          </p>
+      <div class="container" style="width: 82%;margin: auto;">
+        <div class="airbnbStay__title"><h3>Onde ficar</h3></div>
+
+        <div class="row">
+          <p>We found no results for that query</p>
         </div>
       </div>
-
-      <div class="container" style="width: 82%;margin: auto;">
-          <div class="airbnbStay__title"><h3>Onde ficar</h3></div>
-        
-          <div class="row">
-            <p>We found no results for that query</p>
-          </div>
-        </div>
-
     </main>
 
     <script
@@ -86,3 +73,5 @@
       crossorigin="anonymous"
     ></script>
     <% include partials/footer.ejs %>
+  </body>
+</html>

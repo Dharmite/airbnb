@@ -50,7 +50,6 @@ mongoose
 //   .then(house => console.log(house))
 //   .catch(err => console.log(err));
 
-
 app.use(
   expressSession({
     /*
