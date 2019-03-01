@@ -70,7 +70,7 @@
             <nav>
               <ul>
                 <li>Torne-se um anfitrião</li>
-                <li><a href="/logout">Sair</a></li>
+                <li id="logout">Sair</li>
                 <li>
                   <img
                     src="https://www.w3schools.com/howto/img_avatar.png"
@@ -580,7 +580,7 @@
           }
         })
           .done(function(data) {
-            console.log("entrei")
+            console.log("entrei");
             location.replace(`/profile`);
           })
           .fail(function(err) {
@@ -609,6 +609,27 @@
               err.responseText;
           });
       });
+
+      document.getElementById("logout").addEventListener("click", e => {
+
+        e.preventDefault();
+
+        $.ajax({
+          type: "POST",
+          url: "/logout",
+          
+        })
+          .done(function(data) {
+            location.reload();
+          })
+          .fail(function(err) {
+
+            alert(err);
+            
+          });
+        
+      });
+
     </script>
     <% include partials/footer.ejs %>
   </body>

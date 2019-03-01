@@ -104,6 +104,13 @@
   color: #484848;
   font-weight: 550;
 }
+
+.header-container__options--option p:hover {
+
+  cursor: pointer;
+
+}
+
 .anfitriao:hover {
   border-bottom: 2px solid rgb(118, 118, 118) !important;
 }

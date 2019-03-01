@@ -13,38 +13,60 @@
 
     <div class="col-lg-5 col-md-5 header-container__search">
       <i class="fas fa-search"></i>
-      <input type="text"  />
+      <input type="text" />
     </div>
 
     <% if(user){ %>
-      <div class="col-lg-6 col-md-6 header-container__options">
-        <div class="header-container__options--option anfitriao">
-          <p>Torne-se um anfitrião</p>
-        </div>
-
-        <div class="header-container__options--option inscrever">
-          <a href="/logout"><p>Sair</p></a>
-        </div>
-        <div class="header-container__options--option entrar">
-          <p><img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar"></p>
-        </div>
+    <div class="col-lg-6 col-md-6 header-container__options">
+      <div class="header-container__options--option anfitriao">
+        <p>Torne-se um anfitrião</p>
       </div>
+
+      <div class="header-container__options--option inscrever">
+        <p id="navbar-logout">Sair</p>
+      </div>
+      <div class="header-container__options--option entrar">
+        <p>
+          <img
+            src="https://www.w3schools.com/howto/img_avatar.png"
+            alt="Avatar"
+            class="avatar"
+          />
+        </p>
+      </div>
+    </div>
     <%}else{ %>
-      <div class="col-lg-6 col-md-6 header-container__options">
-        <div class="header-container__options--option anfitriao">
-          <p>Torne-se um anfitrião</p>
-        </div>
-        <div class="header-container__options--option ajuda">
-          <p>Ajuda</p>
-        </div>
-        <div class="header-container__options--option inscrever">
-          <p>Inscreva-se</p>
-        </div>
-        <div class="header-container__options--option entrar">
-          <p><a href="/" style="text-decoration: none">Entre</a></p>
-        </div>
+    <div class="col-lg-6 col-md-6 header-container__options">
+      <div class="header-container__options--option anfitriao">
+        <p>Torne-se um anfitrião</p>
       </div>
+      <div class="header-container__options--option ajuda">
+        <p>Ajuda</p>
+      </div>
+      <div class="header-container__options--option inscrever">
+        <p>Inscreva-se</p>
+      </div>
+      <div class="header-container__options--option entrar">
+        <p><a href="/" style="text-decoration: none">Entre</a></p>
+      </div>
+    </div>
     <%} %>
-
   </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+  document.getElementById("navbar-logout").addEventListener("click", e => {
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "/logout"
+    })
+      .done(function(data) {
+        location.replace(`/`);
+      })
+      .fail(function(err) {
+        alert(err);
+      });
+  });
+</script>
