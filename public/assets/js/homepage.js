@@ -38,22 +38,29 @@ document.getElementById("login").addEventListener("click", e => {
     });
 });
 
-document.getElementById("logout").addEventListener("click", e => {
-  e.preventDefault();
 
-  $.ajax({
-    type: "POST",
-    url: "/logout"
-  })
-    .done(function(data) {
-      location.reload();
-    })
-    .fail(function(err) {
-      alert(err);
-    });
-});
-
-document.getElementById("pesquisar").addEventListener("click", e => {
+document.getElementById("pesquisar-web").addEventListener("click", e => {
   e.preventDefault();
   location.replace(`/s/${document.getElementById("where").value}/all`);
 });
+
+
+if(document.getElementById("logout")){
+
+  document.getElementById("logout").addEventListener("click", e => {
+    e.preventDefault();
+  
+    $.ajax({
+      type: "POST",
+      url: "/logout"
+    })
+      .done(function(data) {
+        location.reload();
+      })
+      .fail(function(err) {
+        alert(err);
+      });
+  });
+
+}
+

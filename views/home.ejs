@@ -85,7 +85,7 @@
                     />
                     <p><%= room.host.username %></p>
                     <p><a href="/rooms/<%= room._id %>/edit">Editar</a></p>
-                    <a href="#" id="deleteHouse">eliminar</a>
+                    <a href="#" id="deleteHouse">Eliminar</a>
                   </span>
                 </div>
                 <% } %>
@@ -109,7 +109,7 @@
 
               <div class="extra_info">
                 <h6 class="extra_info-title">
-                  <i class="fas fa-user"></i> Rita é um Superhost
+                  <i class="fas fa-user"></i> <%= room.host.username %> é um Superhost
                 </h6>
                 <p class="extra_info-desc">
                   Superhosts são anfitriões experientes e muito bem avaliados,
