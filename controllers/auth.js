@@ -1,6 +1,6 @@
 const User = require("../models/User");
 
-exports.register = (req, res) => {
+const register = (req, res) => {
   User.register(
     new User({ username: req.body.username }),
     req.body.password,
@@ -13,22 +13,32 @@ exports.register = (req, res) => {
             console.log(err);
             return res.status(401).send(err);
           }
-          res.redirect("/profile");
+          res.json({msg:"success"});
         });
       }
     }
   );
 };
 
-exports.showProfile = (req, res) => {
+const showProfile = (req, res) => {
   res.render("profile");
 };
 
-exports.login = (req, res) => {
+const login = (req, res) => {
   res.send("Logged in");
 };
 
-exports.logout = (req, res) => {
+const logout = (req, res) => {
+
   req.logout();
-  res.redirect("/");
+  res.redirect("/");  
+  
+};
+
+
+module.exports = {
+  register: register,
+  showProfile: showProfile,
+  login: login,
+  logout: logout
 };

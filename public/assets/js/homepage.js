@@ -9,6 +9,7 @@ document.getElementById("sign-up").addEventListener("click", e => {
     }
   })
     .done(function(data) {
+      console.log(data)
       location.replace(`/profile`);
     })
     .fail(function(err) {
@@ -50,4 +51,9 @@ document.getElementById("logout").addEventListener("click", e => {
     .fail(function(err) {
       alert(err);
     });
+});
+
+document.getElementById("pesquisar").addEventListener("click", e => {
+  e.preventDefault();
+  location.replace(`/s/${document.getElementById("where").value}/all`);
 });

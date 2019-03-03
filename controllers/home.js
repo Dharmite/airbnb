@@ -1,9 +1,6 @@
-const Location = require("../models/Location");
-const Home = require("../models/Home");
-
 const db = require("../utilities/db/db");
 
-exports.showHome = async (req, res) => {
+const showHome = async (req, res) => {
   try {
     let homeId = req.params.room_id;
     let room = await db.findDocumentByProperty(
@@ -16,25 +13,25 @@ exports.showHome = async (req, res) => {
     });
     res.render("home", { room, location, homeId });
   } catch (error) {
-    return error;
+    return res.json(error);
   }
 };
 
-exports.showPlusHome = (req, res) => {
+const showPlusHome = (req, res) => {
   res.send("Welcome to plus homes page");
 };
 
-exports.showCreateHome = async (req, res) => {
+const showCreateHome = async (req, res) => {
   try {
     const city = req.params.city;
     const rome = await db.findDocumentByProperty("locations", { name: city });
     res.render("new_home", { city, rome });
   } catch (error) {
-    return error;
+    return res.json(error);
   }
 };
 
-exports.createHome = async (req, res) => {
+const createHome = async (req, res) => {
   if (req.params.city.toUpperCase() !== "ROME") {
     res.render("notfound");
   }
@@ -55,16 +52,14 @@ exports.createHome = async (req, res) => {
     });
 
     location.houses.push(newHome._id);
-    location
-      .save()
-      .then(result => res.redirect(`/${req.params.city}/homes`))
-      .catch(err => res.json(err));
+    await location.save();
+    res.redirect(`/${req.params.city}/homes`);
   } catch (error) {
     return error;
   }
 };
 
-exports.showEditPage = async (req, res) => {
+const showEditPage = async (req, res) => {
   try {
     let room = await db.findDocumentByProperty(
       "homes",
@@ -73,11 +68,11 @@ exports.showEditPage = async (req, res) => {
     );
     res.render("edit_home", { homeId: req.params.room_id, room });
   } catch (error) {
-    return error;
+    return res.json(error);
   }
 };
 
-exports.editPage = async (req, res) => {
+const editPage = async (req, res) => {
   try {
     let home = await db.updateDocumentByProperty(
       "homes",
@@ -90,15 +85,15 @@ exports.editPage = async (req, res) => {
         description: req.body.description
       }
     );
-    home.save().then(savedHouse => {
-      res.send("sucess");
-    });
+
+    await home.save();
+    res.send("sucess");
   } catch (error) {
-    return error;
+    return res.json(error);
   }
 };
 
-exports.deleteHouse = async (req, res) => {
+const deleteHouse = async (req, res) => {
   try {
     let home = await db.deleteDocumentByProperty("homes", {
       _id: req.params.room_id
@@ -114,6 +109,16 @@ exports.deleteHouse = async (req, res) => {
     );
     res.json(location);
   } catch (error) {
-    return error;
+    return res.json(error);
   }
+};
+
+module.exports = {
+  showHome: showHome,
+  showPlusHome: showPlusHome,
+  showCreateHome: showCreateHome,
+  createHome: createHome,
+  showEditPage: showEditPage,
+  editPage: editPage,
+  deleteHouse: deleteHouse
 };

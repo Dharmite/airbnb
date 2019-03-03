@@ -2,6 +2,11 @@
   <div class="airbnbStay__title"><h3>Onde ficar</h3></div>
 
   <div class="row">
+
+    <% if(found){ %>
+      <p>Não encontramos casas para <%= location %> </p>
+    <% } else {%>
+
     <% searched_homes.forEach(function(home) { %>
 
     <div class="col-lg-3 col-md-3 col-sm-6 home" style="width: 18rem;">
@@ -40,5 +45,6 @@
     </div>
 
     <% }) %>
+    <% } %>
   </div>
 </div>

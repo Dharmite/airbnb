@@ -72,11 +72,11 @@
                 <li>Torne-se um anfitrião</li>
                 <li id="logout">Sair</li>
                 <li>
-                  <img
+                  <a href="/profile"><img
                     src="https://www.w3schools.com/howto/img_avatar.png"
                     alt="Avatar"
                     class="avatar"
-                  />
+                  /></a>
                 </li>
               </ul>
             </nav>
@@ -549,13 +549,6 @@
       </div>
     </main>
 
-    <script>
-      document.getElementById("pesquisar").addEventListener("click", e => {
-        e.preventDefault();
-        console.log();
-        location.replace(`/s/${document.getElementById("where").value}/all`);
-      });
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script

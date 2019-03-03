@@ -1,6 +1,6 @@
-const express = require("express");
-const router = express.Router();
-const passport = require("passport");
+const express = require("express"),
+      router = express.Router(),
+      passport = require("passport");
 
 const auth_controller = require("../controllers/auth");
 const auth_middleware = require("../middlewares/auth");

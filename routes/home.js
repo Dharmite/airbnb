@@ -1,7 +1,7 @@
-const express = require("express");
-const router = express.Router();
-const home_controller = require("../controllers/home");
-const auth_middleware = require("../middlewares/auth");
+const express = require("express"),
+      router = express.Router(),
+      home_controller = require("../controllers/home"),
+      auth_middleware = require("../middlewares/auth");
 
 router.get("/rooms/:room_id", home_controller.showHome);
 

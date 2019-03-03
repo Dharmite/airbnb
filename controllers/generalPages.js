@@ -1,4 +1,4 @@
-exports.showHomepage = (req, res) => {
+const showHomepage = (req, res) => {
   const data = {
     where: req.query.city,
     indate: req.query.indate,
@@ -9,6 +9,11 @@ exports.showHomepage = (req, res) => {
   res.render("homepage", { data });
 };
 
-exports.showHelp = (req, res) => {
+const showHelp = (req, res) => {
   res.send("Welcome to help page");
+};
+
+module.exports = {
+  showHomepage: showHomepage,
+  showHelp: showHelp
 };

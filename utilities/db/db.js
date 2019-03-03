@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-mongoose.Promise = global.Promise;
 
 async function postToDB(model, document) {
   const modelFound = await mongoose.model(model);

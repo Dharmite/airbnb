@@ -1,7 +1,6 @@
-const express = require("express");
-const router = express.Router();
-
-const location_controller = require("../controllers/location");
+const express = require("express"),
+    router = express.Router(),
+    location_controller = require("../controllers/location");
 
 router.get("/s/:city/all", location_controller.showAll);
 

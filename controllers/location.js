@@ -1,49 +1,55 @@
-const Location = require("../models/Location");
-const Home = require("../models/Home");
+const db = require("../utilities/db/db"),
+  mongoose = require("mongoose");
 
-const db = require("../utilities/db/db");
-
-const mongoose = require("mongoose");
-mongoose.Promise = global.Promise;
-
-exports.showAll = async (req, res) => {
-  const city = req.params.city;
-  let searched_homes;
-
-  if (city.toUpperCase() === "ROME") {
-    try {
-      let location = await db.findDocumentByProperty(
-        "locations",
-        { name: city },
-        "houses"
-      );
+const showAll = async (req, res) => {
+  try {
+    const city = req.params.city;
+    let found = false;
+    let searched_homes;
+    let location = await db.findDocumentByProperty(
+      "locations",
+      { name: city },
+      "houses"
+    );
+    if (location !== null) {
       searched_homes = location.houses;
-      res.render("search", { location: city, searched_homes });
-    } catch (error) {
-      return error;
+      if (searched_homes.length === 0) {
+        found = true;
+      }
+      res.render("search", { location: city, searched_homes, found });
+    } else {
+      res.render("notfound", { city });
     }
-  } else {
-    res.render("notfound", { city });
+  } catch (error) {
+    return res.json(error);
   }
 };
 
-exports.showHomes = async (req, res) => {
-  const city = req.params.city;
-
-  if (city.toUpperCase() === "ROME") {
-    try {
-      let searched_homes;
-      let location = await db.findDocumentByProperty(
-        "locations",
-        { name: city },
-        "houses"
-      );
+const showHomes = async (req, res) => {
+  try {
+    const city = req.params.city;
+    let found = false;
+    let searched_homes;
+    let location = await db.findDocumentByProperty(
+      "locations",
+      { name: city },
+      "houses"
+    );
+    if (location !== null) {
       searched_homes = location.houses;
-      res.render("homes", { city, searched_homes });
-    } catch (error) {
-      return error;
+      if (searched_homes.length === 0) {
+        found = true;
+      }
+      res.render("homes", { location: city, searched_homes, found });
+    } else {
+      res.render("notfound", { city });
     }
-  } else {
-    res.render("notfound", { city });
+  } catch (error) {
+    return res.json(error);
   }
+};
+
+module.exports = {
+  showAll: showAll,
+  showHomes: showHomes
 };
