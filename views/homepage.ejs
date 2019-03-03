@@ -568,69 +568,7 @@
       integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
       crossorigin="anonymous"
     ></script>
-    <script>
-      document.getElementById("sign-up").addEventListener("click", e => {
-        e.preventDefault();
-        $.ajax({
-          type: "POST",
-          url: "/register",
-          data: {
-            username: document.getElementById("username").value,
-            password: document.getElementById("password").value
-          }
-        })
-          .done(function(data) {
-            console.log("entrei");
-            location.replace(`/profile`);
-          })
-          .fail(function(err) {
-            document.getElementById("registerModalLabel").style.color = "red";
-            document.getElementById("registerModalLabel").innerText =
-              err.responseText;
-          });
-      });
-
-      document.getElementById("login").addEventListener("click", e => {
-        e.preventDefault();
-        $.ajax({
-          type: "POST",
-          url: "/login",
-          data: {
-            username: document.getElementById("username-login").value,
-            password: document.getElementById("password-login").value
-          }
-        })
-          .done(function(data) {
-            location.replace(`/profile`);
-          })
-          .fail(function(err) {
-            document.getElementById("loginModalLabel").style.color = "red";
-            document.getElementById("loginModalLabel").innerText =
-              err.responseText;
-          });
-      });
-
-      document.getElementById("logout").addEventListener("click", e => {
-
-        e.preventDefault();
-
-        $.ajax({
-          type: "POST",
-          url: "/logout",
-          
-        })
-          .done(function(data) {
-            location.reload();
-          })
-          .fail(function(err) {
-
-            alert(err);
-            
-          });
-        
-      });
-
-    </script>
+    <script src="/assets/js/homepage.js"></script>
     <% include partials/footer.ejs %>
   </body>
 </html>

@@ -6,105 +6,107 @@
     <title>Edit home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-    crossorigin="anonymous"
-  />
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
     <link
-    rel="stylesheet"
-    type="text/css"
-    media="screen"
-    href="/assets/style/homepage/header.css"
-  />
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/assets/style/homepage/header.css"
+    />
 
-  <link
-  rel="stylesheet"
-  type="text/css"
-  media="screen"
-  href="/assets/style/search/header.css"
-/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/assets/style/search/header.css"
+    />
   </head>
   <body>
     <header>
       <% include partials/navbar.ejs %>
     </header>
 
-
-    
     <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-6">
-            <h1>Edit home</h1>
-            <form>
-              <div class="form-group">
-                <label for="image">Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  aria-describedby="name"
-                  placeholder="name"
-                  name="name"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="beds">Number of beds</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="beds"
-                  aria-describedby="beds"
-                  min="1"
-                  name="beds"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="main_image">image url</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="main_image"
-                  aria-describedby="main_image"
-                  placeholder="image url"
-                  name="main_image"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="price">Price</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="price"
-                  aria-describedby="price"
-                  min="1"
-                  name="price"
-                  required
-                />
-              </div>
-  
-              <div class="form-group">
-                <label for="description">Description</label>
-                <textarea 
-                  class="form-control"
-                  id="description"
-                  aria-describedby="description"
-                  name="description"
-                  required
-                  /> </textarea>
-              </div>
-  
-              <button class="btn btn-primary" id="editHome">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div> 
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <h1>Editar casa</h1>
+          <form>
+            <div class="form-group">
+              <label for="image">Nome</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                aria-describedby="name"
+                placeholder="name"
+                name="name"
+                value="<%= room.name %>"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="beds">Numero de camas</label>
+              <input
+                type="number"
+                class="form-control"
+                id="beds"
+                aria-describedby="beds"
+                min="1"
+                name="beds"
+                value="<%= room.beds %>"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="main_image">Imagem representativa da casa</label>
+              <input
+                type="text"
+                class="form-control"
+                id="main_image"
+                aria-describedby="main_image"
+                placeholder="image url"
+                name="main_image"
+                value="<%= room.main_image %>"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="price">Preço</label>
+              <input
+                type="number"
+                class="form-control"
+                id="price"
+                aria-describedby="price"
+                min="1"
+                name="price"
+                required
+                value="<%= room.price %>"
+              />
+            </div>
 
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <div class="form-group">
+              <label for="description">Descrição</label>
+              <input
+                class="form-control"
+                id="description"
+                aria-describedby="description"
+                name="description"
+                value="<%= room.description %>"
+                required
+              />
+            </div>
+
+            <button class="btn btn-primary" id="editHome">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
@@ -117,29 +119,11 @@
       crossorigin="anonymous"
     ></script>
     <script>
-    document.getElementById("editHome").addEventListener("click", e => {
-  e.preventDefault();
-  $.ajax({
-    type: "PUT",
-    url: "/rooms/<%= homeId %>/",
-    data: {
-      name: document.getElementById("name").value,
-      beds: document.getElementById("beds").value,
-      price: document.getElementById("price").value,
-      main_image: document.getElementById("main_image").value,
-      description: document.getElementById("description").value
-    }
-  })
-    .done(function(data) {
-      location.replace(`/rooms/<%= homeId %>`);
-    })
-    .fail(function(err) {
-      console.log(err);
-      alert(err);
-    });
-});
-
-    
+      window.homeId = "<%= homeId %>";
     </script>
+    <script>
+      window.roomId = "<%= room._id %>";
+    </script>
+    <script src="/assets/js/editHome.js"></script>
   </body>
 </html>

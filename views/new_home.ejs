@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-
-        <% include partials/header.ejs %>
+    <% include partials/header.ejs %>
 
     <title>New home - airbnb</title>
     <link
@@ -12,7 +11,6 @@
       crossorigin="anonymous"
     />
 
-
     <link
       rel="stylesheet"
       type="text/css"
@@ -20,26 +18,25 @@
       href="/assets/style/search/header.css"
     />
     <link
-    rel="stylesheet"
-    type="text/css"
-    media="screen"
-    href="/assets/style/homepage/header.css"
-  />
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/assets/style/homepage/header.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
     <header>
-            <% include partials/navbar.ejs %>
-
+      <% include partials/navbar.ejs %>
     </header>
 
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-6">
-          <h1>Add new home</h1>
+          <h1>Adicione a sua casa</h1>
           <form action="/<%= city %>/homes" method="POST">
             <div class="form-group">
-              <label for="image">Name</label>
+              <label for="image">Nome</label>
               <input
                 type="text"
                 class="form-control"
@@ -51,7 +48,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="beds">Number of beds</label>
+              <label for="beds">Numero de camas</label>
               <input
                 type="number"
                 class="form-control"
@@ -63,7 +60,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="main_image">image url</label>
+              <label for="main_image">Imagem representativa da casa</label>
               <input
                 type="text"
                 class="form-control"
@@ -75,7 +72,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="price">Price</label>
+              <label for="price">Preço</label>
               <input
                 type="number"
                 class="form-control"
@@ -88,14 +85,15 @@
             </div>
 
             <div class="form-group">
-              <label for="description">Description</label>
-              <textarea 
+              <label for="description">Descrição</label>
+              <input
                 class="form-control"
                 id="description"
                 aria-describedby="description"
                 name="description"
                 required
-                /> </textarea>
+              />
+              
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -104,3 +102,5 @@
       </div>
     </div>
     <% include partials/footer.ejs %>
+  </body>
+</html>

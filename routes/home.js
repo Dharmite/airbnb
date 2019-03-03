@@ -32,8 +32,7 @@ router.put(
 router.delete(
   "/rooms/:room_id/",
   auth_middleware.isLoggedIn,
-  auth_middleware.isHomeHost,
-  home_controller.deletePage
+  home_controller.deleteHouse
 );
 
 module.exports = router;

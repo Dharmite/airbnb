@@ -111,6 +111,13 @@
 
 }
 
+.header-container__options--option a {
+
+  text-decoration: none;
+  color: #484848;
+
+}
+
 .anfitriao:hover {
   border-bottom: 2px solid rgb(118, 118, 118) !important;
 }
