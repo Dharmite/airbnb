@@ -40,17 +40,8 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
-/*  Location.create({
-  name: "rome",
-  houses: []
-
-})
-  .then(house => console.log(house))
-  .catch(err => console.log(err)); */
-
 app.use(
   expressSession({
-
     secret: "My secret message that should be long and memorable",
     resave: false,
     saveUninitialized: false
